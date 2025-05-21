@@ -1,22 +1,29 @@
+---
+import HeadTags from '~/components/HeadTags.astro';
+import { getLangFromURL } from '~/i18n/utils';
+import Footer from '~/sections/Footer.astro';
+import Navbar from '~/sections/Navbar.astro';
+import '~/styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props
+const lang = getLangFromURL(Astro.url)
+---
+
 <!doctype html>
-<html lang="en">
+<html {lang}>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<HeadTags title={title} description={description} />
 	</head>
-	<body>
-		<slot />
+	<body class="bg-ritual-900 text-gray-200 font-vessel font-light">
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+    <Footer />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

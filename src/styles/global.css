@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ritual-950: #050505;
+  --color-ritual-900: #0a0a0a;
+  --color-ritual-800: #121212;
+  --color-ritual-700: #1a1a1a;
+  --color-ritual-600: #242424;
+  --color-ritual-500: #303030;
+  --color-ritual-400: #404040;
+  --color-ritual-300: #b0b0b0;
+  --color-ritual-200: #d1d1d1;
+  --color-ritual-100: #e7e7e7;
+  --color-ritual-50: #f6f6f6;
+
+  --color-vessel-950: #2e1065;
+  --color-vessel-900: #4c1d95;
+  --color-vessel-800: #5b21b6;
+  --color-vessel-700: #6d28d9;
+  --color-vessel-600: #7c3aed;
+  --color-vessel-500: #8b5cf6;
+  --color-vessel-400: #a78bfa;
+  --color-vessel-300: #c4b5fd;
+  --color-vessel-200: #ddd6fe;
+  --color-vessel-100: #ede9fe;
+  --color-vessel-50: #f5f3ff;
+
+  --font-ritual: 'Cinzel', 'serif';
+  --font-vessel: 'Inter', 'sans-serif';
+}
+
+@utility clip-triangle {
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+@utility clip-diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+@utility text-shadow-sm {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+@utility text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(0,0,0,0.8);
+}
+

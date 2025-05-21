@@ -1,0 +1,157 @@
+---
+import { Font } from 'astro:assets'
+import type { Preload } from '~/types/index.d'
+
+interface Props {
+	title: string
+	description: string
+	preload?: Array<Preload>
+	canonical?: string
+	image?: string
+}
+
+const { title, description, canonical, preload, image } = Astro.props
+
+const determineCanonicalURL = () => {
+	if (Astro.url.host.includes('localhost')) {
+		return 'http://localhost:4321'
+	} else if (Astro.url.host.includes('192.168.0.11')) {
+		return 'http://192.168.0.11:4321'
+	} else if (Astro.url.host.includes('172.23.224.1')) {
+		return 'http://172.23.224.1:4321'
+	}
+	return canonical || Astro.url.pathname
+}
+const canonicalUrl = new URL(determineCanonicalURL(), Astro.site)
+---
+
+<meta charset='UTF-8' />
+<meta
+	name='viewport'
+	content='width=device-width'
+/>
+<meta
+	name='description'
+	content={description}
+/>
+<meta
+	name='theme-color'
+	content='#'
+/>
+<meta
+	name='keywords'
+	content='Sleep Token, ST, Sleep Token Argentina, ST Argentina, Fan Page, Adoradores, Worshipers'
+/>
+
+<link
+	rel='icon'
+	type='image/svg+xml'
+	href='/favicon.svg'
+/>
+<link
+	rel='apple-touch-icon'
+	href='/favicon.png'
+/>
+<link
+	rel='manifest'
+	href='/manifest.json'
+/>
+<meta
+	name='msapplication-theme'
+	content='#0099ff'
+/>
+<meta
+	name='msapplication-config'
+	content='browserconfig.xml'
+/>
+
+<link
+	rel='canonical'
+	href={canonicalUrl}
+/>
+<!-- Open Graph Facebook and other pages -->
+<meta
+	property='og:url'
+	content={canonicalUrl}
+/>
+<meta
+	property='og:type'
+	content='website'
+/>
+<meta
+	property='og:title'
+	content={title}
+/>
+<meta
+	property='og:description'
+	content={description}
+/>
+<meta
+	property='og:image'
+	content={image}
+/>
+<meta
+	name='og:site_name'
+	content='Sleep Token Argentina'
+/>
+<meta
+	name='og:locale'
+	content='es_AR'
+/>
+<!-- Open Graph Twitter and other pages -->
+<meta
+	name='twitter:card'
+	content='summary_large_image'
+/>
+<meta
+	name='twitter:site'
+	content='@SleepTokenArg'
+/>
+<meta
+	name='twitter:creator'
+	content='@CaroOcta00'
+/>
+<meta
+	name='twitter:title'
+	content={title}
+/>
+<meta
+	name='twitter:description'
+	content={description}
+/>
+<meta
+	name='twitter:image'
+	content={image}
+/>
+
+<!-- Robots and googlebot -->
+<meta
+	name='robots'
+	content='index, follow'
+/>
+<meta
+	name='googlebot'
+	content='index, follow'
+/>
+
+<!-- <link rel='preload' href='' />  -->
+{
+	preload?.map(({ href, as, type, rel = 'preload', crossorigin }) => (
+		<link
+			rel={rel}
+			href={href}
+			as={as}
+			type={type}
+			crossorigin={crossorigin}
+		/>
+	))
+}
+
+<Font
+	cssVariable='--font-inter'
+	preload
+/>
+<Font
+	cssVariable='--font-cinzel'
+	preload
+/>
