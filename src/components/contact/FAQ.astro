@@ -1,0 +1,50 @@
+---
+import { Accordion, AccordionItem } from 'free-astro-components'
+---
+
+<div class='bg-ritual-800 rounded-lg p-8'>
+  <h2 class='text-eia-500 mb-6 text-2xl font-bold'>Preguntas Frecuentes</h2>
+
+  <div class='space-y-4'>
+    <Accordion variant='light'>
+      <AccordionItem
+        title='¿Cómo puedo unirme a un ritual?'
+        class='[&>summary>span]:text-eia-300 [&>summary>span]:mb-2 [&>summary>span]:font-semibold'
+      >
+        <p class='text-sm text-gray-300'>
+          Visita la sección de Rituales para ver los próximos eventos y hacer clic en "Unirse".
+        </p>
+      </AccordionItem>
+
+      <AccordionItem
+        title='¿Puedo compartir mi arte?'
+        class='[&>summary>span]:text-eia-300 [&>summary>span]:mb-2 [&>summary>span]:font-semibold'
+      >
+        <p class='text-sm text-gray-300'>
+          ¡Por supuesto! Ve a la sección Ofrendas y haz clic en "Subir Ofrenda".
+        </p>
+      </AccordionItem>
+
+      <AccordionItem
+        title='¿Cómo organizo un evento en mi ciudad?'
+        class='[&>summary>span]:text-eia-300 [&>summary>span]:mb-2 [&>summary>span]:font-semibold'
+      >
+        <p class='mb-2 text-sm text-gray-300'>
+          Contáctanos a través de este formulario con el asunto "Organizar un ritual".
+        </p>
+      </AccordionItem>
+    </Accordion>
+  </div>
+</div>
+
+<style>
+  .ac-accordion-item-title span {
+    color: var(--color-eia-300);
+    margin-bottom: calc(var(--spacing) * 2);
+    font-weight: var(--font-weight-semibold);
+
+    &:hover {
+      color: var(--color-eia-500);
+    }
+  }
+</style>

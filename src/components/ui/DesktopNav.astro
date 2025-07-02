@@ -1,0 +1,80 @@
+---
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
+
+const NAVIGATION = [
+  {
+    href: '/discography',
+    text: t('nav.ul.discographies'),
+  },
+  {
+    href: '/rituals',
+    text: t('nav.ul.rituals'),
+  },
+  {
+    href: '/worshippers',
+    text: t('nav.ul.worshippers'),
+  },
+  {
+    href: '/offerings',
+    text: t('nav.ul.offerings'),
+  },
+  {
+    href: '/newsletter',
+    text: t('nav.ul.newsletter'),
+  },
+  {
+    href: '/contact',
+    text: t('nav.ul.contact'),
+  },
+]
+
+const NAVIGATION_LEFT = NAVIGATION.slice(0, NAVIGATION.length / 2)
+const NAVIGATION_RIGHT = NAVIGATION.slice(3, NAVIGATION.length)
+---
+
+<div
+  class='bg-ritual-800/90 border-eia-600/20 hidden rounded-full border px-4 py-3 backdrop-blur-md md:flex'
+>
+  <ul class='flex w-full items-center justify-between space-x-4'>
+    {
+      NAVIGATION_LEFT.map(({ href, text }) => (
+        <li>
+          <a
+            href={href}
+            class='text-eia-400 hover:text-eia-300 font-medium transition-colors duration-300'
+            title={text}
+          >
+            {text}
+          </a>
+        </li>
+      ))
+    }
+    <li>
+      <a href='/'>
+        <img
+          src='/images/icons/st_arg_icon.webp'
+          alt='Inicio ST Argentina'
+          width='30'
+          height='30'
+          title={t('nav.ul.home')}
+        />
+      </a>
+    </li>
+    {
+      NAVIGATION_RIGHT.map(({ href, text }) => (
+        <li>
+          <a
+            href={href}
+            class='text-eia-400 hover:text-eia-300 font-medium transition-colors duration-300'
+            title={text}
+          >
+            {text}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>

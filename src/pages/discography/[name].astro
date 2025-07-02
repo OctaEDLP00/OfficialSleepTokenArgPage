@@ -1,0 +1,184 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
+const { name } = Astro.params
+---
+
+<Layout
+  title={t('index.page.title').replace('%name%', name ?? '')}
+  description=''
+>
+  <main class='relative flex min-h-screen items-center justify-center overflow-hidden pt-20'>
+    <div class='relative z-10 mx-auto max-w-4xl px-4 text-center'>
+      <!-- WORK IN PROGRESS ICON COMPONENT -->
+      <div class='mb-8'>
+        <div
+          class='from-eia-500/20 to-vessel-500/20 relative mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br'
+        >
+          <div class='border-eia-500/30 absolute inset-0 animate-pulse rounded-full border-4'></div>
+          <span class='text-6xl'>🔧</span>
+        </div>
+        <div class='text-eia-400 flex items-center justify-center space-x-2'>
+          <div class='bg-eia-500 h-2 w-2 animate-bounce rounded-full'></div>
+          <div
+            class='bg-eia-500 h-2 w-2 animate-bounce rounded-full'
+            style='animation-delay: 0.1s'
+          >
+          </div>
+          <div
+            class='bg-eia-500 h-2 w-2 animate-bounce rounded-full'
+            style='animation-delay: 0.2s'
+          >
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN MESSAGE COMPONENT -->
+      <div class='mb-12 space-y-6'>
+        <h1
+          class='from-eia-500 to-vessel-400 bg-gradient-to-r bg-clip-text text-5xl font-bold text-transparent md:text-7xl'
+        >
+          En Construcción
+        </h1>
+        <h2 class='text-eia-300 text-2xl font-light md:text-3xl'>
+          Esta sección está siendo creada con devoción
+        </h2>
+        <p class='mx-auto max-w-2xl text-lg leading-relaxed text-gray-300'>
+          Nuestros adoradores están trabajando para traerte una experiencia única. Esta página
+          estará lista pronto para continuar nuestro ritual digital.
+        </p>
+      </div>
+
+      <!-- PROGRESS INDICATOR COMPONENT -->
+      <div class='bg-ritual-800/50 border-eia-500/20 mb-12 rounded-2xl border p-8 backdrop-blur-sm'>
+        <h3 class='text-eia-300 mb-6 text-xl font-semibold'>Progreso del Desarrollo</h3>
+
+        <div class='space-y-4'>
+          <div class='flex items-center justify-between text-sm'>
+            <span class='text-gray-300'>Diseño y Estructura</span>
+            <span class='text-eia-400 font-medium'>85%</span>
+          </div>
+          <div class='bg-ritual-700 h-2 w-full rounded-full'>
+            <div
+              class='from-eia-500 to-eia-400 h-2 w-[85%] rounded-full bg-gradient-to-r transition-all duration-1000'
+            >
+            </div>
+          </div>
+        </div>
+
+        <div class='mt-6 space-y-4'>
+          <div class='flex items-center justify-between text-sm'>
+            <span class='text-gray-300'>Contenido y Funcionalidades</span>
+            <span class='text-vessel-400 font-medium'>60%</span>
+          </div>
+          <div class='bg-ritual-700 h-2 w-full rounded-full'>
+            <div
+              class='from-vessel-500 to-vessel-400 h-2 w-[60%] rounded-full bg-gradient-to-r transition-all duration-1000'
+            >
+            </div>
+          </div>
+        </div>
+
+        <div class='mt-6 space-y-4'>
+          <div class='flex items-center justify-between text-sm'>
+            <span class='text-gray-300'>Pruebas y Optimización</span>
+            <span class='text-tmbte-400 font-medium'>25%</span>
+          </div>
+          <div class='bg-ritual-700 h-2 w-full rounded-full'>
+            <div
+              class='from-tmbte-500 to-tmbte-400 h-2 w-[25%] rounded-full bg-gradient-to-r transition-all duration-1000'
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESTIMATED COMPLETION COMPONENT -->
+      <div class='mb-12 grid gap-6 md:grid-cols-3'>
+        <div class='bg-ritual-800/30 border-eia-500/20 rounded-xl border p-6 backdrop-blur-sm'>
+          <div class='mb-3 text-3xl'>📅</div>
+          <h4 class='text-eia-300 mb-2 font-semibold'>Fecha Estimada</h4>
+          <p class='text-gray-300'>Febrero 2025</p>
+        </div>
+
+        <div class='bg-ritual-800/30 border-vessel-500/20 rounded-xl border p-6 backdrop-blur-sm'>
+          <div class='mb-3 text-3xl'>⚡</div>
+          <h4 class='text-vessel-300 mb-2 font-semibold'>Estado Actual</h4>
+          <p class='text-gray-300'>Desarrollo Activo</p>
+        </div>
+
+        <div class='bg-ritual-800/30 border-tmbte-500/20 rounded-xl border p-6 backdrop-blur-sm'>
+          <div class='mb-3 text-3xl'>🎯</div>
+          <h4 class='text-tmbte-300 mb-2 font-semibold'>Prioridad</h4>
+          <p class='text-gray-300'>Alta</p>
+        </div>
+      </div>
+
+      <!-- NOTIFICATION SIGNUP COMPONENT -->
+      <div
+        class='from-ritual-800 to-ritual-700 border-eia-500/20 mb-12 rounded-2xl border bg-gradient-to-r p-8'
+      >
+        <h3 class='text-eia-500 mb-4 text-2xl font-bold'>¿Quieres ser notificado?</h3>
+        <p class='mb-6 text-gray-300'>
+          Déjanos tu email y te avisaremos cuando esta sección esté lista para el ritual.
+        </p>
+
+        <form class='mx-auto flex max-w-md flex-col gap-4 sm:flex-row'>
+          <input
+            type='email'
+            placeholder='tu@email.com'
+            class='bg-ritual-900 border-eia-500/30 focus:border-eia-500 flex-1 rounded-lg border px-4 py-3 text-white placeholder-gray-400 transition-colors focus:outline-none'
+          />
+          <button
+            type='submit'
+            class='bg-eia-500 hover:bg-eia-400 text-ritual-900 rounded-lg px-6 py-3 font-semibold whitespace-nowrap transition-colors duration-300'
+          >
+            Notificarme
+          </button>
+        </form>
+      </div>
+
+      <!-- ALTERNATIVE ACTIONS COMPONENT -->
+      <div class='space-y-4'>
+        <p class='mb-6 text-gray-400'>Mientras tanto, puedes explorar:</p>
+        <div class='flex flex-col justify-center gap-4 sm:flex-row'>
+          <a
+            href='index.html'
+            class='bg-ritual-800 hover:bg-ritual-700 text-eia-400 border-eia-500/20 rounded-lg border px-6 py-3 font-semibold transition-colors duration-300'
+          >
+            🏠 Volver al Inicio
+          </a>
+          <a
+            href='discografia.html'
+            class='bg-ritual-800 hover:bg-ritual-700 text-vessel-400 border-vessel-500/20 rounded-lg border px-6 py-3 font-semibold transition-colors duration-300'
+          >
+            🎵 Explorar Música
+          </a>
+          <a
+            href='rituales.html'
+            class='bg-ritual-800 hover:bg-ritual-700 text-tmbte-400 border-tmbte-500/20 rounded-lg border px-6 py-3 font-semibold transition-colors duration-300'
+          >
+            🎭 Ver Rituales
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const notificationForm = document.querySelector('form') as HTMLFormElement
+  if (notificationForm) {
+    notificationForm.addEventListener('submit', function (e) {
+      e.preventDefault()
+      const email = (document.querySelector('input[type="email"]')as HTMLInputElement).value
+      if (email) {
+        alert('¡Gracias! Te notificaremos cuando esta sección esté lista.')
+        notificationForm.reset()
+      }
+    })
+  }
+</script>

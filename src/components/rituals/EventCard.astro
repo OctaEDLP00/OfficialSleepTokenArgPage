@@ -1,0 +1,58 @@
+---
+import type { ProvinceText, Month } from '~/types'
+
+interface Props {
+  assistants: number
+  day: string
+  description: string
+  eventType: string
+  month: Month
+  place: string
+  province: ProvinceText
+  time: string
+  title: string
+  year?: string
+}
+
+const {
+  day,
+  description,
+  eventType,
+  month,
+  place,
+  province,
+  time,
+  title,
+  year = new Date().getFullYear().toString(),
+} = Astro.props
+---
+
+<article class='bg-ritual-800 border-eia-500 rounded-lg border-l-4 p-6'>
+  <div class='mb-4 flex flex-col justify-between md:flex-row md:items-center'>
+    <div>
+      <h3 class='text-eia-300 mb-2 text-xl font-semibold'>
+        {eventType} - {title}
+      </h3>
+      <p class='text-gray-300'>{province}, Argentina</p>
+    </div>
+    <div class='mt-4 text-right md:mt-0'>
+      <div class='text-eia-500 text-2xl font-bold'>{day}</div>
+      <div class='text-sm text-gray-400'>{month} {year}</div>
+    </div>
+  </div>
+  <p class='mb-4 text-gray-400'>
+    {description}
+  </p>
+  <div class='flex items-center justify-between'>
+    <div class='flex items-center space-x-4 text-sm text-gray-400'>
+      <span>📍 {place}</span>
+      <span>🕒 {time} hs</span>
+      <!-- <span>👥 {assistants} adoradores confirmados</span> -->
+    </div>
+    <button
+      class='bg-eia-500 text-ritual-900 hover:bg-eia-300 rounded-full px-6 py-2 font-semibold transition-colors'
+    >
+      Unirse
+    </button>
+  </div>
+</article>

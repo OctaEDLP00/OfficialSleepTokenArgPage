@@ -1,0 +1,36 @@
+---
+import type { ReleaseDate } from '~/types'
+
+interface Props {
+  name: string
+  slug: string
+  image: {
+    src: string
+    width: string | number | undefined | null
+    height: string | number | undefined | null
+    alt: string
+  }
+  releaseDate: ReleaseDate | string
+}
+
+const { name, slug, image, releaseDate } = Astro.props
+const year = releaseDate.split('/')[2]
+---
+
+<a
+  href={`/discography/${slug}`}
+  title={name}
+>
+  <div class='bg-ritual-800 hover:bg-ritual-700 cursor-pointer rounded-lg p-4 transition-colors'>
+    <div class='mb-4 flex aspect-square items-center justify-center rounded-lg'>
+      <img
+        class='rounded-t-sm'
+        {...image}
+      />
+    </div>
+    <h3 class:list={[name.length >= 32 && 'truncate', 'mb-1 font-semibold text-white']}>
+      {name}
+    </h3>
+    <p class='text-sm text-gray-400'>{year}</p>
+  </div>
+</a>

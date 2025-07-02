@@ -1,0 +1,106 @@
+---
+interface Props {
+  textLabel: string
+  forLabel: string
+  name: string
+  placeholder?: string
+  select?: boolean
+  textarea?: boolean
+  isRequired?: boolean
+}
+
+const { forLabel, name, textLabel, placeholder, select, textarea, isRequired } = Astro.props
+---
+
+<div>
+  <label
+    for={forLabel}
+    class='text-eia-300 mb-2 block font-medium'
+    >{textLabel}
+    {
+      isRequired && (
+        <span
+          class='text-red-500/40'
+          title='Campo Obligatorio/Requerido'
+        >
+          *
+        </span>
+      )
+    }</label
+  >
+  {
+    !select && !textarea && (
+      <input
+        type='text'
+        name={name}
+        class='bg-ritual-900 border-eia-500/30 focus:border-eia-500 w-full rounded-lg border px-4 py-3 text-white placeholder-gray-400 transition-colors focus:outline-none'
+        placeholder={placeholder}
+        required={isRequired}
+      />
+    )
+  }
+  {
+    select && !textarea && (
+      <select
+        name={name}
+        class='bg-ritual-900 border-eia-500/30 focus:border-eia-500 w-full rounded-lg border px-4 py-3 text-white transition-colors focus:outline-none'
+        required={isRequired}
+      >
+        <option
+          class='text-gray-400'
+          selected
+          disabled
+        >
+          Selecciona un asunto
+        </option>
+        <option
+          class='text-gray-400'
+          value='organizar ritual'
+        >
+          Organizar un ritual
+        </option>
+        <option
+          class='text-gray-400'
+          value='compartir ofrenda'
+        >
+          Compartir una ofrenda
+        </option>
+        <option
+          class='text-gray-400'
+          value='propuesta colaboracion'
+        >
+          Propuesta de colaboración
+        </option>
+        <option
+          class='text-gray-400'
+          value='reportar problema'
+        >
+          Reportar un problema
+        </option>
+        <option
+          class='text-gray-400'
+          value='sugerencia'
+        >
+          Sugerencia
+        </option>
+        <option
+          class='text-gray-400'
+          value='otro'
+        >
+          Otro
+        </option>
+      </select>
+    )
+  }
+  {
+    !select && textarea && (
+      <textarea
+        name={name}
+        rows='6'
+        class='bg-ritual-900 border-eia-500/30 focus:border-eia-500 w-full resize-none rounded-lg border px-4 py-3 text-white placeholder-gray-400 transition-colors focus:outline-none'
+        placeholder={placeholder}
+        required={isRequired}
+      />
+    )
+  }
+</div>

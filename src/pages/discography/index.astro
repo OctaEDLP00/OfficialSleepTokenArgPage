@@ -1,0 +1,21 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import Hero from '~/components/discography/Hero.astro'
+import AlbumGrid from '~/sections/discography/AlbumGrid.astro'
+import EpsGrid from '~/sections/discography/EpsGrid.astro'
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
+---
+
+<Layout
+  title={t('discography.page.index.title')}
+  description={t('discography.page.index.description')}
+>
+  <Hero />
+  <main class='pb-32'>
+    <AlbumGrid />
+    <EpsGrid />
+  </main>
+</Layout>

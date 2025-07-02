@@ -6,10 +6,11 @@
   "quoteProps": "as-needed",
   "proseWrap": "preserve",
   "tabWidth": 2,
-  "useTabs": true,
+  "useTabs": false,
   "arrowParens": "avoid",
   "endOfLine": "lf",
   "singleAttributePerLine": true,
+  "experimentalTernaries": true,
   "trailingComma": "all",
   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   "overrides": [
@@ -22,7 +23,10 @@
     {
       "files": "*.svg",
       "options": {
-        "parser": "html"
+        "parser": "html",
+        "singleAttributePerLine": true,
+        "singleQuote": true,
+        "printWidth": 100
       }
     },
     {

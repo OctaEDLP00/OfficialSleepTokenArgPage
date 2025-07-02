@@ -1,0 +1,46 @@
+---
+import Arrow from '~/assets/arrow.svg'
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+enum Rel {
+  'noreferrer noopener' = 'noreferrer noopener',
+  'noopener' = 'noopener',
+  'noreferrer' = 'noreferrer',
+}
+
+type Target = '_blank' | '_self' | '_top' | '_parent'
+
+interface Props {
+  title: string
+  description: string
+  href: string
+  target?: Target
+  rel?: keyof typeof Rel
+}
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
+
+const { title, description, href, rel, target = '_self' } = Astro.props
+---
+
+<article
+  class='bg-ritual-800 overflow-hidden rounded-lg transition-all duration-300 hover:scale-105 hover:transform'
+>
+  <div class='from-eia-500/20 to-ritual-700 h-48 bg-gradient-to-br'></div>
+  <div class='p-6'>
+    <h3 class='text-eia-300 mb-3 text-xl font-semibold'>{title}</h3>
+    <p class='mb-4 text-gray-300'>
+      {description}
+    </p>
+    <a
+      href={href}
+      rel={rel}
+      target={target}
+      class='text-eia-500 hover:text-eia-300 transition-colors'
+    >
+      {t('newsCard.link.text')}
+      <Arrow />
+    </a>
+  </div>
+</article>

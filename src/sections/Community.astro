@@ -1,0 +1,47 @@
+---
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+import InfoComunity from '~/components/ui/InfoComunity.astro'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
+
+const INFO_COMMUNITY = [
+  {
+    text: t('community.worshippers'),
+    quantity: 2847,
+  },
+  {
+    text: t('community.rituals'),
+    quantity: 156,
+  },
+  {
+    text: t('community.cities'),
+    quantity: 12,
+  },
+  {
+    text: t('community.offerings'),
+    quantity: 89,
+  },
+]
+---
+
+<section
+  data-name='Community'
+  class='bg-ritual-800 py-16'
+>
+  <div class='mx-auto max-w-6xl px-4'>
+    <h2 class='text-eia-500 mb-12 text-center text-3xl font-bold'>Nuestra Comunidad</h2>
+    <div class='grid grid-cols-2 gap-8 text-center md:grid-cols-4'>
+      {
+        INFO_COMMUNITY.map(info => {
+          return (
+            <InfoComunity
+              text={info.text}
+              quantity={info.quantity}
+            />
+          )
+        })
+      }
+    </div>
+  </div>
+</section>

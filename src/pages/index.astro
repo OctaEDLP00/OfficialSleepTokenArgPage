@@ -1,20 +1,19 @@
 ---
-import Layout from '~/layouts/Layout.astro';
-import Contact from '~/sections/Contact.astro';
-import Discography from '~/sections/Discograpy.astro';
-import Hero from '~/sections/Hero.astro';
-import Newsletter from '~/sections/Newsletter.astro';
-import Offerings from '~/sections/Offerings.astro';
-import Rituals from '~/sections/Rituals.astro';
-import Workshippers from '~/sections/Worshippers.astro';
+import Hero from '~/components/Hero.astro'
+import Layout from '~/layouts/Layout.astro'
+// import Featured from '~/sections/Featured.astro'
+// import LatestNews from '~/sections/LatestNews.astro'
+import Community from '~/sections/Community.astro'
 ---
 
-<Layout title='' description=''>
+<Layout
+  title='Sleep Token Argentina | Comunidad de Adoradores'
+  description=''
+>
   <Hero />
-  <Discography />
-  <Rituals />
-  <Workshippers />
-  <Offerings />
-  <Contact />
-  <Newsletter />
+  <main class='py-20'>
+    <!-- <Featured /> -->
+    <Community />
+    <!-- <LatestNews /> -->
+  </main>
 </Layout>

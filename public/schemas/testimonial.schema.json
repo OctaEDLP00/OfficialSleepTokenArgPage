@@ -1,0 +1,40 @@
+{
+  "$ref": "#/definitions/Testimonials",
+  "definitions": {
+    "Testimonials": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Testimonial"
+      }
+    },
+    "Testimonial": {
+      "type": "object",
+      "properties": {
+        "name": {},
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string"
+            },
+            "alt": {
+              "type": "string"
+            },
+            "width": {
+              "type": "string"
+            },
+            "height": {
+              "type": "string"
+            }
+          }
+        },
+        "message": {
+          "type": "string"
+        },
+        "since": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

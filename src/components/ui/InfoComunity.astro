@@ -1,0 +1,13 @@
+---
+interface Props {
+  text: string
+  quantity: string | number
+}
+
+const { text, quantity } = Astro.props
+---
+
+<div class='space-y-2'>
+  <div class='text-eia-300 text-3xl font-bold capitalize'>{text}</div>
+  <div class='text-2xl text-gray-400'>{quantity}</div>
+</div>

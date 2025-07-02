@@ -1,0 +1,57 @@
+---
+import Discord from '~/assets/discord.svg'
+import Instagram from '~/assets/instagram.svg'
+import X from '~/assets/x.svg'
+import Gmail from '~/assets/email.svg'
+import ContactItem from './ContactItem.astro'
+import type { Icon } from '~/types/index'
+
+const CONTACT_METHOD = [
+  {
+    Icon: Gmail,
+    title: 'Email',
+    subtitle: 'st-arg@gmail.com',
+    description: 'Respuesta en 24-48 horas',
+  },
+  {
+    Icon: Discord,
+    title: 'Discord',
+    subtitle: 'Sleep Token Argentina',
+    description: 'Chat en tiempo real con la comunidad',
+  },
+  {
+    Icon: Instagram,
+    title: 'Instagram',
+    subtitle: '@sleeptoken.ar',
+    description: 'Síguenos para contenido diario',
+  },
+  {
+    Icon: X,
+    title: 'X',
+    subtitle: '@SleepTokenAR',
+    description: 'Noticias y actualizaciones rápidas',
+  },
+] satisfies Array<{
+  Icon: Icon
+  title: string
+  subtitle: string
+  description: string
+}>
+---
+
+<div class='bg-ritual-800 rounded-lg p-8'>
+  <h2 class='text-eia-500 mb-6 text-2xl font-bold'>Otras Formas de Contacto</h2>
+  <div class='space-y-6'>
+    {
+      CONTACT_METHOD.map(({ Icon, title, subtitle, description }) => (
+        <ContactItem
+          title={title}
+          subtitle={subtitle}
+          description={description}
+        >
+          <Icon />
+        </ContactItem>
+      ))
+    }
+  </div>
+</div>

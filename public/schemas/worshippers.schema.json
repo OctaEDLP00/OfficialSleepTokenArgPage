@@ -1,0 +1,53 @@
+{
+  "$ref": "#/definitions/Worshippers",
+  "definitions": {
+    "Worshippers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Worshippper"
+      }
+    },
+    "Worshippper": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "lastName": {
+          "type": "string"
+        },
+        "province": {
+          "type": "string",
+          "enum": [
+            "Buenos Aires",
+            "Catamarca",
+            "Chaco",
+            "Chubut",
+            "Ciudad Autonoma de Buenos Aires",
+            "Cordoba",
+            "Corrientes",
+            "Entre Rios",
+            "Formosa",
+            "Jujuy",
+            "La Pampa",
+            "La Rioja",
+            "Mendoza",
+            "Misiones",
+            "Neuquen",
+            "Rio Negro",
+            "Salta",
+            "San Juan",
+            "San Luis",
+            "Santa Cruz",
+            "Santa Fe",
+            "Santigo del Estero",
+            "Tierra del Fuego, Antartida e Islas del Atlantico Sur",
+            "Tucuman"
+          ]
+        },
+        "additionalProperties": false
+      },
+      "required": ["name", "lastName", "province"]
+    }
+  }
+}

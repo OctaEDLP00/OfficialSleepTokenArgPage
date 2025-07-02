@@ -1,0 +1,21 @@
+---
+import Hero from '~/components/rituals/Hero.astro'
+import Layout from '~/layouts/Layout.astro'
+import CreateEvent from '~/sections/rituals/CreateEvent.astro'
+import PastEvents from '~/sections/rituals/PastEvents.astro'
+import RitualCampaign from '~/sections/rituals/RitualCampaign.astro'
+import UpcomingEvents from '~/sections/rituals/UpcomingEvents.astro'
+---
+
+<Layout
+  title=''
+  description=''
+>
+  <Hero />
+  <main class='pb-32'>
+    <RitualCampaign />
+    <UpcomingEvents />
+    <PastEvents />
+    <CreateEvent />
+  </main>
+</Layout>

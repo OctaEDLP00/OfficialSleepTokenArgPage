@@ -1,0 +1,55 @@
+---
+import type { Icon, Image } from '~/types'
+
+interface Props {
+  image: Image
+  nameMember: string
+  rolMember: string
+  socialMedia: Array<
+    {
+      href: string
+      rel: string
+      target: string
+      className?: string
+      Icon: Icon
+    } & { [key: string]: any }
+  >
+}
+
+const { image, nameMember, rolMember, socialMedia: SOCIAL_NETWORKS } = Astro.props
+---
+
+<div class='flex items-center space-x-8'>
+  <div class='flex size-12 items-center justify-center'>
+    <img
+      class='rounded-full'
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+    />
+  </div>
+  <div>
+    <h3 class='text-eia-300 font-semibold'>{nameMember}</h3>
+    <p class='text-sm text-gray-400'>{rolMember}</p>
+  </div>
+  <div>
+    <ul class='flex h-auto w-full flex-row items-center justify-between gap-2 space-x-6'>
+      {
+        SOCIAL_NETWORKS.map(({ Icon, href, target, rel, className, ...props }) => (
+          <li>
+            <a
+              href={href}
+              rel={rel}
+              target={target}
+              class={className}
+              {...props}
+            >
+              <Icon class='hover:text-eia-500 text-eia-300 size-5' />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

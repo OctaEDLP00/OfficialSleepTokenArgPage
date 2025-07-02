@@ -1,0 +1,582 @@
+{
+  "albums": [
+    {
+      "name": "Even In Arcadia",
+      "duration": "56:33",
+      "image": {
+        "alt": "Portada del Album Even In Arcadia",
+        "height": "1200",
+        "src": "/images/albums/EIA.webp",
+        "width": "1200"
+      },
+      "releaseDate": "05/05/2025",
+      "slug": "even-in-arcadia",
+      "songs": [
+        {
+          "name": "Look To Windward",
+          "duration": "7:46",
+          "explicit": false
+        },
+        {
+          "name": "Emergence",
+          "duration": "6:26",
+          "explicit": false
+        },
+        {
+          "name": "Past Self",
+          "duration": "3:34",
+          "explicit": true
+        },
+        {
+          "name": "Dangerous",
+          "duration": "4:11",
+          "explicit": false
+        },
+        {
+          "name": "Caramel",
+          "duration": "4:50",
+          "explicit": false
+        },
+        {
+          "name": "Even In Arcadia",
+          "duration": "4:28",
+          "explicit": false
+        },
+        {
+          "name": "Provider",
+          "duration": "6:05",
+          "explicit": false
+        },
+        {
+          "name": "Damocles",
+          "duration": "4:24",
+          "explicit": false
+        },
+        {
+          "name": "Gethsemane",
+          "duration": "6:23",
+          "explicit": false
+        },
+        {
+          "name": "Infinite Baths",
+          "duration": "8:23",
+          "explicit": false
+        }
+      ]
+    },
+    {
+      "name": "Take Me Back To Eden",
+      "duration": "1:03:00",
+      "image": {
+        "alt": "Portada del Album Take Me Back To Eden",
+        "height": "950",
+        "src": "/images/albums/TMBTE.webp",
+        "width": "950"
+      },
+      "releaseDate": "19/05/2023",
+      "slug": "take-me-back-to-eden",
+      "songs": [
+        {
+          "name": "Chokehold",
+          "duration": "5:04",
+          "explicit": false
+        },
+        {
+          "name": "The Summoning",
+          "duration": "6:35",
+          "explicit": false
+        },
+        {
+          "name": "Granite",
+          "duration": "3:45",
+          "explicit": false
+        },
+        {
+          "name": "Aqua Regia",
+          "duration": "3:56",
+          "explicit": false
+        },
+        {
+          "name": "Vore",
+          "duration": "5:39",
+          "explicit": false
+        },
+        {
+          "name": "Ascensionism",
+          "duration": "7:08",
+          "explicit": false
+        },
+        {
+          "name": "Are You Really Okay?",
+          "duration": "5:06",
+          "explicit": false
+        },
+        {
+          "name": "The Apparition",
+          "duration": "4:28",
+          "explicit": false
+        },
+        {
+          "name": "DYWTYLM",
+          "duration": "4:00",
+          "explicit": false
+        },
+        {
+          "name": "Rain",
+          "duration": "4:12",
+          "explicit": false
+        },
+        {
+          "name": "Take Me Back To Eden",
+          "duration": "8:20",
+          "explicit": false
+        },
+        {
+          "name": "Euclid",
+          "duration": "5:13",
+          "explicit": false
+        }
+      ]
+    },
+    {
+      "name": "Sundowning Instrumental",
+      "duration": "57:20",
+      "image": {
+        "alt": "Portada del Album Sundowning Instrumental",
+        "height": "1000",
+        "src": "/images/albums/Sundowning.webp",
+        "width": "1000"
+      },
+      "releaseDate": "20/03/2022",
+      "slug": "sundowning-instrumental",
+      "songs": [
+        {
+          "name": "The Night Does Not Belong To God - Instrumental",
+          "duration": "5:03",
+          "explicit": false
+        },
+        {
+          "name": "The Offering - Instrumental",
+          "duration": "5:49",
+          "explicit": false
+        },
+        {
+          "name": "Levitate - Instrumental",
+          "duration": "4:58",
+          "explicit": false
+        },
+        {
+          "name": "Dark Signs - Instrumental",
+          "duration": "4:28",
+          "explicit": false
+        },
+        {
+          "name": "Higher - Instrumental",
+          "duration": "5:21",
+          "explicit": false
+        },
+        {
+          "name": "Take Aim - Instrumental",
+          "duration": "3:39",
+          "explicit": false
+        },
+        {
+          "name": "Give - Instrumental",
+          "duration": "3:56",
+          "explicit": false
+        },
+        {
+          "name": "Gods - Instrumental",
+          "duration": "3:25",
+          "explicit": true
+        },
+        {
+          "name": "Sugar - Instrumental",
+          "duration": "4:52",
+          "explicit": false
+        },
+        {
+          "name": "Say That You Will - Instrumental",
+          "duration": "5:03",
+          "explicit": false
+        },
+        {
+          "name": "Drag Me Under - Instrumental",
+          "duration": "3:56",
+          "explicit": false
+        },
+        {
+          "name": "Blood Sport - Instrumental",
+          "duration": "4:07",
+          "explicit": false
+        }
+      ]
+    },
+    {
+      "name": "This Place Will Become Your Tomb Instrumental",
+      "duration": "46:18",
+      "image": {
+        "alt": "Portada del Album This Place Will Become Your Tomb Instrumental",
+        "height": "640",
+        "src": "/images/albums/TPWBYT.webp",
+        "width": "640"
+      },
+      "releaseDate": "26/11/2021",
+      "slug": "this-place-will-become-your-tomb-instrumental",
+      "songs": [
+        {
+          "name": "Atlantic - Instrumental",
+          "duration": "4:52",
+          "explicit": false
+        },
+        {
+          "name": "Hypnosis - Instrumental",
+          "duration": "5:35",
+          "explicit": false
+        },
+        {
+          "name": "Mine - Instrumental",
+          "duration": "4:56",
+          "explicit": false
+        },
+        {
+          "name": "Like That - Instrumental",
+          "duration": "3:34",
+          "explicit": false
+        },
+        {
+          "name": "The Love You Want - Instrumental",
+          "duration": "4:23",
+          "explicit": false
+        },
+        {
+          "name": "Alkaline - Instrumental",
+          "duration": "3:34",
+          "explicit": false
+        },
+        {
+          "name": "Distraction - Instrumental",
+          "duration": "4:22",
+          "explicit": false
+        },
+        {
+          "name": "Descending - Instrumental",
+          "duration": "4:39",
+          "explicit": false
+        },
+        {
+          "name": "Telomeres - Instrumental",
+          "duration": "5:06",
+          "explicit": false
+        },
+        {
+          "name": "High Water - Instrumental",
+          "duration": "5:13",
+          "explicit": false
+        }
+      ]
+    },
+    {
+      "name": "This Place Will Become Your Tomb",
+      "duration": "52:05",
+      "image": {
+        "alt": "Portada del Album This Place Will Become Your Tomb",
+        "height": "640",
+        "src": "/images/albums/TPWBYT.webp",
+        "width": "640"
+      },
+      "releaseDate": "24/07/2021",
+      "slug": "this-place-will-become-your-tomb",
+      "songs": [
+        {
+          "name": "Atlantic",
+          "duration": "4:53",
+          "explicit": false
+        },
+        {
+          "name": "Hypnosis",
+          "duration": "5:35",
+          "explicit": false
+        },
+        {
+          "name": "Mine",
+          "duration": "4:56",
+          "explicit": false
+        },
+        {
+          "name": "Like That",
+          "duration": "3:34",
+          "explicit": false
+        },
+        {
+          "name": "The Love You Want",
+          "duration": "4:23",
+          "explicit": false
+        },
+        {
+          "name": "Fall From Me",
+          "duration": "2:26",
+          "explicit": false
+        },
+        {
+          "name": "Alkaline",
+          "duration": "3:34",
+          "explicit": false
+        },
+        {
+          "name": "Distraction",
+          "duration": "4:22",
+          "explicit": false
+        },
+        {
+          "name": "Descending",
+          "duration": "4:38",
+          "explicit": false
+        },
+        {
+          "name": "Telomeres",
+          "duration": "5:07",
+          "explicit": false
+        },
+        {
+          "name": "High Water",
+          "duration": "5:13",
+          "explicit": false
+        },
+        {
+          "name": "Missing Limbs",
+          "duration": "3:20",
+          "explicit": false
+        }
+      ]
+    },
+    {
+      "name": "Sundowning (Deluxe)",
+      "duration": "1:07:00",
+      "image": {
+        "alt": "Portada del Album Sundowning (Deluxe)",
+        "height": "300",
+        "src": "/images/albums/SundowningDeluxe.webp",
+        "width": "300"
+      },
+      "releaseDate": "20/06/2020",
+      "slug": "sundowning-deluxe",
+      "songs": [
+        {
+          "name": "The Night Does Not Belong To God",
+          "duration": "5:03",
+          "explicit": false
+        },
+        {
+          "name": "The Offering",
+          "duration": "5:49",
+          "explicit": false
+        },
+        {
+          "name": "Levitate",
+          "duration": "4:58",
+          "explicit": false
+        },
+        {
+          "name": "Dark Signs",
+          "duration": "4:28",
+          "explicit": false
+        },
+        {
+          "name": "Higher",
+          "duration": "5:21",
+          "explicit": false
+        },
+        {
+          "name": "Take Aim",
+          "duration": "3:39",
+          "explicit": false
+        },
+        {
+          "name": "Give",
+          "duration": "3:56",
+          "explicit": false
+        },
+        {
+          "name": "Gods",
+          "duration": "3:25",
+          "explicit": true
+        },
+        {
+          "name": "Sugar",
+          "duration": "4:52",
+          "explicit": false
+        },
+        {
+          "name": "Say That You Will",
+          "duration": "5:03",
+          "explicit": false
+        },
+        {
+          "name": "Drag Me Under",
+          "duration": "3:56",
+          "explicit": false
+        },
+        {
+          "name": "Blood Sport",
+          "duration": "4:07",
+          "explicit": false
+        },
+        {
+          "name": "Blood Sport - from the room below",
+          "duration": "4:07",
+          "explicit": false
+        },
+        {
+          "name": "Shelter - from the room below",
+          "duration": "3:12",
+          "explicit": false
+        },
+        {
+          "name": "When the Party's Over - from the room below",
+          "duration": "2:26",
+          "explicit": false
+        },
+        {
+          "name": "I Wanna Dance With Somebody - from the room below",
+          "duration": "2:49",
+          "explicit": false
+        }
+      ]
+    },
+    {
+      "name": "Sundowning",
+      "duration": "54:41",
+      "image": {
+        "alt": "Portada del Album Sundowning",
+        "height": "1000",
+        "src": "/images/albums/Sundowning.webp",
+        "width": "1000"
+      },
+      "releaseDate": "21/11/2019",
+      "slug": "sundowning",
+      "songs": [
+        {
+          "name": "The Night Does Not Belong To God",
+          "duration": "5:03",
+          "explicit": false
+        },
+        {
+          "name": "The Offering",
+          "duration": "5:49",
+          "explicit": false
+        },
+        {
+          "name": "Levitate",
+          "duration": "4:58",
+          "explicit": false
+        },
+        {
+          "name": "Dark Signs",
+          "duration": "4:28",
+          "explicit": false
+        },
+        {
+          "name": "Higher",
+          "duration": "5:21",
+          "explicit": false
+        },
+        {
+          "name": "Take Aim",
+          "duration": "3:39",
+          "explicit": false
+        },
+        {
+          "name": "Give",
+          "duration": "3:56",
+          "explicit": false
+        },
+        {
+          "name": "Gods",
+          "duration": "3:25",
+          "explicit": true
+        },
+        {
+          "name": "Sugar",
+          "duration": "4:52",
+          "explicit": false
+        },
+        {
+          "name": "Say That You Will",
+          "duration": "5:03",
+          "explicit": false
+        },
+        {
+          "name": "Drag Me Under",
+          "duration": "3:56",
+          "explicit": false
+        },
+        {
+          "name": "Blood Sport",
+          "duration": "4:07",
+          "explicit": false
+        }
+      ]
+    }
+  ],
+  "eps": [
+    {
+      "name": "One",
+      "duration": "18:00",
+      "image": {
+        "alt": "Portada del EP One",
+        "height": "700",
+        "src": "/images/ep/one.webp",
+        "width": "700"
+      },
+      "releaseDate": "02/12/2016",
+      "slug": "one",
+      "songs": [
+        {
+          "name": "Thread the Needle",
+          "duration": "6:36",
+          "explicit": false
+        },
+        {
+          "name": "Fields of Elation",
+          "duration": "4:31",
+          "explicit": false
+        },
+        {
+          "name": "When the Bough Breaks",
+          "duration": "7:35",
+          "explicit": false
+        }
+      ]
+    },
+    {
+      "name": "Two",
+      "duration": "17:00",
+      "image": {
+        "alt": "Portada del EP Two",
+        "height": "900",
+        "src": "/images/ep/two.webp",
+        "width": "900"
+      },
+      "releaseDate": "21/07/2017",
+      "slug": "two",
+      "songs": [
+        {
+          "name": "Calcutta",
+          "duration": "6:53",
+          "explicit": false
+        },
+        {
+          "name": "Nazareth",
+          "duration": "5:36",
+          "explicit": true
+        },
+        {
+          "name": "Jericho",
+          "duration": "5:17",
+          "explicit": false
+        }
+      ]
+    }
+  ]
+}

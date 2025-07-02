@@ -1,0 +1,35 @@
+[
+  {
+    "image": {
+      "alt": "",
+      "height": "150",
+      "src": "/images/adoradores/example-lucia.jpg",
+      "width": "150"
+    },
+    "message": "Sleep Token cambió mi vida. Su música tiene una profundidad emocional que nunca había experimentado antes. Encontrar esta comunidad de fans en Argentina ha sido increíble.",
+    "name": "Lucía Mendez",
+    "since": "Adoradora desde 2019"
+  },
+  {
+    "image": {
+      "alt": "",
+      "height": "150",
+      "src": "/images/adoradores/example-martin.jpg",
+      "width": "150"
+    },
+    "message": "La primera vez que escuché 'The Offering', supe que había encontrado algo especial. La comunidad argentina de Sleep Token es como una familia para mí.",
+    "name": "Martín Acosta",
+    "since": "Adorador desde 2021"
+  },
+  {
+    "image": {
+      "alt": "",
+      "height": "150",
+      "src": "/images/adoradores/example-martin.jpg",
+      "width": "150"
+    },
+    "message": "Cada álbum de Sleep Token es un viaje emocional. Participar en los rituales de escucha con otros adoradores argentinos ha sido una experiencia transformadora.",
+    "name": "Carolina Ruiz",
+    "since": "Adorador desde 2021"
+  }
+]

@@ -1,0 +1,37 @@
+---
+import type { Image } from '~/types/index'
+
+interface Props {
+  image: Image
+  message: string
+  name: string
+  since: string | number
+}
+
+const { message, name, image, since } = Astro.props
+---
+
+<div class='bg-ritual-800 border-eia-500 rounded-xl border-l-4 p-6'>
+  <div class='flex items-start space-x-4'>
+    <div
+      class='from-eia-500/30 to-ritual-700 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br'
+    >
+      <img
+        class='h-full w-full object-cover'
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+      />
+    </div>
+    <div class='flex-1'>
+      <blockquote class='mb-4 text-lg text-gray-300 italic'>
+        "{message}"
+      </blockquote>
+      <div class='space-y-1'>
+        <h4 class='text-eia-300 font-semibold'>{name}</h4>
+        <p class='text-sm text-gray-400'>{since}</p>
+      </div>
+    </div>
+  </div>
+</div>

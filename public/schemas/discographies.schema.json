@@ -1,0 +1,81 @@
+{
+  "$ref": "#/definitions/Discography",
+  "definitions": {
+    "Discography": {
+      "type": "object",
+      "properties": {
+        "albums": { "$ref": "#/definitions/Album" },
+        "eps": { "$ref": "#/definitions/Eps" }
+      }
+    },
+    "Album": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AlbumInfo",
+        "additionalProperties": false
+      }
+    },
+    "Eps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AlbumInfo",
+        "additionalProperties": false
+      }
+    },
+    "AlbumInfo": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "duration": { "type": "string" },
+        "songs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Song",
+            "additionalProperties": false
+          }
+        },
+        "image": {
+          "$ref": "#/definitions/Image",
+          "additionalProperties": false
+        },
+        "releaseDate": {
+          "anyOf": [{ "type": ["string"] }, { "type": "string" }]
+        },
+        "slug": { "type": "string" }
+      },
+      "required": ["name", "duration", "songs", "image", "releaseDate", "slug"]
+    },
+    "Song": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "duration": { "type": "string" },
+        "customImageCover": { "type": "string" },
+        "explicit": { "type": "boolean", "default": false }
+      },
+      "required": ["name", "duration", "explicit"]
+    },
+    "Image": {
+      "type": "object",
+      "properties": {
+        "src": { "type": "string" },
+        "alt": { "type": "string" },
+        "width": {
+          "anyOf": [
+            { "type": "string", "default": "" },
+            { "type": "number", "default": 0 },
+            { "type": "null" }
+          ]
+        },
+        "height": {
+          "anyOf": [
+            { "type": "string", "default": "" },
+            { "type": "number", "default": 0 },
+            { "type": "null" }
+          ]
+        }
+      },
+      "required": ["alt", "src"]
+    }
+  }
+}

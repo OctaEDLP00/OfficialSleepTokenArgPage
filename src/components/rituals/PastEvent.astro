@@ -1,0 +1,43 @@
+---
+import Arrow from '~/assets/arrow.svg'
+import type { Image } from '~/types'
+
+interface Props {
+  assistants: number
+  date: string | Date
+  description: string
+  eventType: string
+  image: Image
+  place: string
+  title: string
+}
+
+const { assistants, date, description, eventType, image, place, title } = Astro.props
+---
+
+<article class='bg-ritual-800 overflow-hidden rounded-lg'>
+  <div class='h-48'>
+    <img
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+      class='h-full w-full object-cover'
+    />
+  </div>
+  <div class='p-6'>
+    <h3 class='text-eia-300 mb-2 text-lg font-semibold'>
+      {title} - {eventType}
+    </h3>
+    <p class='mb-3 text-sm text-gray-400'>{place} • {date}</p>
+    <p class='mb-4 text-gray-300'>
+      {description}
+    </p>
+    <div class='flex items-center justify-between'>
+      <span class='text-sm text-gray-400'>👥 {assistants} asistentes</span>
+      <button class='text-eia-500 hover:text-eia-300 transition-colors'>
+        Ver fotos <Arrow class='size-2' />
+      </button>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,181 @@
+---
+import ArtworkCard from '~/components/offerings/ArtworkCard.astro'
+import Filter from '~/components/offerings/Filter.astro'
+import type { Icon, Image } from '~/types'
+
+import All from '~/assets/all.svg'
+import Paint from '~/assets/paint.svg'
+import Photo from '~/assets/photo.svg'
+import Rehearsal from '~/assets/rehearsal.svg'
+import Crafts from '~/assets/crafts.svg'
+import Design from '~/assets/design.svg'
+import Tab from '~/assets/tab.svg'
+import Portrait from '~/assets/portrait.svg'
+import Cover from '~/assets/cover.svg'
+
+const FILTERS = [
+  {
+    text: 'Todas',
+    Icon: All,
+  },
+  {
+    text: 'Arte',
+    Icon: Paint,
+  },
+  {
+    text: 'Fotografía',
+    Icon: Photo,
+  },
+  {
+    text: 'Ensayo',
+    Icon: Rehearsal,
+  },
+  {
+    text: 'Artesanía',
+    Icon: Crafts,
+  },
+  {
+    text: 'Diseño',
+    Icon: Design,
+  },
+  {
+    text: 'Tablatura',
+    Icon: Tab,
+  },
+  {
+    text: 'Retrato',
+    Icon: Portrait,
+  },
+  {
+    text: 'Cover',
+    Icon: Cover,
+  },
+] satisfies Array<{ text: string; Icon: Icon }>
+
+const ARTWORK_CARDS = [
+  {
+    title: 'Take MeBack To Eden',
+    by: 'Vessel_BA',
+    filter: 'Pintura',
+    image: {
+      alt: '',
+      height: '',
+      src: '',
+      width: '',
+    },
+  },
+  {
+    title: 'Ritual Buenos Aires',
+    by: 'Worship_Rosario',
+    filter: 'Fotografía',
+    image: {
+      alt: '',
+      height: '',
+      src: '',
+      width: '',
+    },
+  },
+  {
+    title: 'Chokehold Cover',
+    by: 'Sleep_Mendoza',
+    filter: 'Cover',
+    image: {
+      alt: '',
+      height: '',
+      src: '',
+      width: '',
+    },
+  },
+  {
+    title: 'Lyrics Analysis',
+    by: 'Token_Analyst',
+    filter: 'Ensayo',
+    image: {
+      alt: '',
+      height: '',
+      src: '',
+      width: '',
+    },
+  },
+  {
+    title: 'Handmade Mask',
+    by: 'Craft_Adorador',
+    filter: 'Artesanía',
+    image: {
+      alt: '',
+      height: '',
+      src: '',
+      width: '',
+    },
+  },
+  {
+    title: 'Sundowning Poster',
+    by: 'Design_Token',
+    filter: 'Diseño',
+    image: {
+      alt: '',
+      height: '',
+      src: '',
+      width: '',
+    },
+  },
+  {
+    title: 'Guitar Tab',
+    by: 'Guitarist_ST',
+    filter: 'Tablatura',
+    image: {
+      alt: '',
+      height: '',
+      src: '',
+      width: '',
+    },
+  },
+  {
+    title: 'Band Portrait',
+    by: 'Artist_Arcadia',
+    filter: 'Retrato',
+    image: {
+      alt: '',
+      height: '',
+      src: '',
+      width: '',
+    },
+  },
+] satisfies Array<{
+  title: string
+  by: string
+  filter: string | Array<string>
+  image: Image
+}>
+---
+
+<section
+  data-name='GalleryGrid'
+  class='mx-auto mb-12 max-w-6xl px-4'
+>
+  <div class='mb-8 flex items-center justify-between'>
+    <h2 class='text-eia-500 text-2xl font-bold'>Galería de Ofrendas</h2>
+    <div class='flex space-x-2'>
+      {
+        FILTERS.map(({ text, Icon }) => (
+          <Filter text={text}>
+            <Icon class='size-4' />
+          </Filter>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class='grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4'>
+    {
+      ARTWORK_CARDS.map(({ filter, by, title, image }) => (
+        <ArtworkCard
+          title={title}
+          by={by}
+          filter={filter}
+          image={image}
+        />
+      ))
+    }
+  </div>
+</section>

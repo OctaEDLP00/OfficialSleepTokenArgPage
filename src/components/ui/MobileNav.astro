@@ -1,0 +1,117 @@
+---
+import Hamburger from '~/assets/hamburger.svg'
+
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
+
+const NAVIGATION = [
+  {
+    href: '/discography',
+    text: t('nav.ul.discographies'),
+    title: t('nav.ul.discographies'),
+  },
+  {
+    href: '/rituals',
+    text: t('nav.ul.rituals'),
+    title: t('nav.ul.rituals'),
+  },
+  {
+    href: '/worshippers',
+    text: t('nav.ul.worshippers'),
+    title: t('nav.ul.worshippers'),
+  },
+  {
+    href: '/oferrings',
+    text: t('nav.ul.offerings'),
+    title: t('nav.ul.offerings'),
+  },
+  {
+    href: '/newsletter',
+    text: t('nav.ul.newsletter'),
+    title: t('nav.ul.newsletter'),
+  },
+  {
+    href: '/contact',
+    text: t('nav.ul.contact'),
+    title: t('nav.ul.contact'),
+  },
+]
+---
+
+<div class='bg-ritual-800/95 border-eia-600/20 rounded-2xl border backdrop-blur-md md:hidden'>
+  <!-- Mobile Menu Button -->
+  <div class='flex items-center justify-between px-4 py-3'>
+    <a href='/'>
+      <img
+        src='/images/icons/st_arg_icon.webp'
+        width='35'
+        '
+        height='35'
+        alt='ST Argentina'
+        title={t('nav.ul.home')}
+      />
+    </a>
+    <button
+      id='mobileMenuBtn'
+      class='hover:text-eia-400 p-2 text-white transition-colors'
+    >
+      <Hamburger />
+    </button>
+  </div>
+
+  <!-- Mobile Menu Items -->
+  <div
+    id='mobileMenu'
+    class='border-eia-600/20 hidden border-t'
+  >
+    <ul class='py-2'>
+      {
+        NAVIGATION.map(({ href, text, title }) => (
+          <li>
+            <a
+              href={href}
+              class='text-eia-400 hover:bg-ritual-700/50 block px-4 py-3 font-medium transition-colors'
+              title={title}
+            >
+              {text}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<script>
+  // Mobile menu toggle functionality
+  document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn')
+    const mobileMenu = document.getElementById('mobileMenu')
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', function () {
+        mobileMenu.classList.toggle('hidden')
+
+        // Change icon
+        const icon = mobileMenuBtn.querySelector('svg path') as SVGSVGElement
+        if (mobileMenu.classList.contains('hidden')) {
+          icon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16')
+        } else {
+          icon.setAttribute('d', 'M6 18L18 6M6 6l12 12')
+        }
+      })
+
+      // Close menu when clicking on a link
+      const menuLinks = mobileMenu.querySelectorAll('a')
+      menuLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          mobileMenu.classList.add('hidden')
+          const icon = mobileMenuBtn.querySelector('svg path')
+          icon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16')
+        })
+      })
+    }
+  })
+</script>

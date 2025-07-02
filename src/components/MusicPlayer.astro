@@ -1,0 +1,121 @@
+<div
+  data-name='MusicPlayer'
+  id='musicPlayer'
+  class='bg-ritual-800/95 border-eia-600/20 fixed right-0 bottom-0 left-0 z-40 translate-y-full transform border-t p-4 backdrop-blur-md transition-transform duration-300'
+>
+  <div class='mx-auto flex max-w-6xl items-center justify-between'>
+    <div class='flex items-center space-x-4'>
+      <div class='bg-eia-500/20 flex h-12 w-12 items-center justify-center rounded-lg'>
+        <span class='text-eia-500'>♪</span>
+      </div>
+      <div>
+        <div
+          class='font-semibold text-white'
+          id='currentSong'
+        >
+          -
+        </div>
+        <div
+          class='text-sm text-gray-400'
+          id='currentArtist'
+        >
+          Sleep Token
+        </div>
+      </div>
+    </div>
+
+    <div class='flex items-center space-x-4'>
+      <button
+        id='prevBtn'
+        class='hover:text-eia-500 text-gray-400 transition-colors'
+        >⏮</button
+      >
+      <button
+        id='playPauseBtn'
+        class='bg-eia-500 text-ritual-900 hover:bg-eia-300 flex h-10 w-10 items-center justify-center rounded-full transition-colors'
+      >
+        ▶
+      </button>
+      <button
+        id='nextBtn'
+        class='hover:text-eia-500 text-gray-400 transition-colors'
+        >⏭</button
+      >
+    </div>
+
+    <div class='flex items-center space-x-4'>
+      <span
+        class='text-sm text-gray-400'
+        id='currentTime'
+        >0:00</span
+      >
+      <div class='bg-ritual-700 h-1 w-32 rounded-full'>
+        <div
+          id='progressBar'
+          class='bg-eia-500 h-1 w-0 rounded-full'
+        >
+        </div>
+      </div>
+      <span
+        class='text-sm text-gray-400'
+        id='totalTime'
+        >0:00</span
+      >
+      <button
+        id='volumeBtn'
+        class='hover:text-eia-500 text-gray-400 transition-colors'
+        >🔊</button
+      >
+    </div>
+  </div>
+</div>
+
+<script>
+  import MusicPlayer from '~/lib/MusicPlayer.ts'
+
+  declare global {
+    interface Window {
+      musicPlayer: MusicPlayer
+      playSong: (songTitle: string, albumName: string | null) => void
+    }
+  }
+
+  // Initialize music player when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // Create global music player instance
+    window.musicPlayer = new MusicPlayer()
+
+    // Make playSong function globally available for HTML onclick events
+    window.playSong = (songTitle, albumName) => {
+      if (window.musicPlayer) {
+        window.musicPlayer.playSong(songTitle, albumName ?? '')
+      }
+    }
+  })
+</script>
+
+<style>
+  #musicPlayer {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  #musicPlayer .progress-container {
+    cursor: pointer;
+  }
+
+  #musicPlayer .progress-container:hover #progressBar {
+    background-color: #f4e4a6;
+  }
+
+  @media (max-width: 768px) {
+    #musicPlayer .max-w-6xl {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    #musicPlayer .flex.items-center.space-x-4:last-child {
+      order: -1;
+    }
+  }
+</style>

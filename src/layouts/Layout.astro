@@ -1,13 +1,14 @@
 ---
-import HeadTags from '~/components/HeadTags.astro';
-import { getLangFromURL } from '~/i18n/utils';
-import Footer from '~/sections/Footer.astro';
-import Navbar from '~/sections/Navbar.astro';
-import '~/styles/global.css';
+import HeadTags from '~/components/HeadTags.astro'
+import { getLangFromURL } from '~/i18n/utils'
+import Footer from '~/components/Footer.astro'
+import Navbar from '~/components/Navbar.astro'
+import MusicPlayer from '~/components/MusicPlayer.astro'
+import '~/styles/global.css'
 
 interface Props {
-  title: string;
-  description: string;
+  title: string
+  description: string
 }
 
 const { title, description } = Astro.props
@@ -16,14 +17,69 @@ const lang = getLangFromURL(Astro.url)
 
 <!doctype html>
 <html {lang}>
-	<head>
-		<HeadTags title={title} description={description} />
-	</head>
-	<body class="bg-ritual-900 text-gray-200 font-vessel font-light">
+  <head>
+    <HeadTags
+      title={title}
+      description={description}
+    />
+  </head>
+  <body class='bg-ritual-900 font-vessel font-light text-gray-200'>
     <Navbar />
-    <main>
-      <slot />
-    </main>
+    <slot />
     <Footer />
-	</body>
+    <MusicPlayer />
+  </body>
 </html>
+
+<style is:global>
+  html::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  html::-webkit-scrollbar-track {
+    background: #0a0a0a;
+  }
+  html::-webkit-scrollbar-thumb {
+    background: #6d28d9;
+    border-radius: 9px;
+    border: 1px solid #6d28d9;
+  }
+
+  html::selection {
+    background-color: #6d28d9;
+    color: #0a0a0a;
+  }
+
+  html::-moz-selection {
+    background-color: #6d28d9;
+    color: #0a0a0a;
+  }
+
+  button:focus,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: 2px solid #6d28d9;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  @media print {
+    nav,
+    #musicPlayer,
+    footer {
+      display: none !important;
+    }
+
+    body {
+      background: white !important;
+      color: black !important;
+    }
+  }
+</style>

@@ -1,0 +1,54 @@
+---
+import FormField from './FormField.astro'
+---
+
+<div class='bg-ritual-800 rounded-lg p-8'>
+  <h2 class='text-eia-500 mb-6 text-2xl font-bold'>Envíanos un Mensaje</h2>
+  <form
+    class='space-y-6'
+    method='POST'
+    action='/api/contact'
+  >
+    <FormField
+      forLabel='name'
+      name='name'
+      textLabel='Nombre'
+      placeholder='Nombre'
+      isRequired
+    />
+    <FormField
+      forLabel='lastName'
+      name='lastName'
+      textLabel='Apellido'
+      placeholder='Apellido'
+      isRequired
+    />
+    <FormField
+      forLabel='email'
+      name='email'
+      textLabel='Email'
+      placeholder='tu@email.com'
+      isRequired
+    />
+    <FormField
+      forLabel='subject'
+      name='subject'
+      textLabel='Asunto'
+      select
+      isRequired
+    />
+    <FormField
+      forLabel='message'
+      name='message'
+      textLabel='Mensaje'
+      placeholder='Cuéntanos en qué podemos ayudarte...'
+      textarea
+      isRequired
+    />
+    <button
+      class='bg-eia-500 text-ritual-900 hover:bg-eia-300 w-full rounded-lg py-3 font-semibold transition-colors'
+    >
+      Enviar Mensaje
+    </button>
+  </form>
+</div>

@@ -1,0 +1,80 @@
+---
+import { PROVINCES } from '~/constants/index'
+---
+
+<form
+  id='join-form'
+  class='space-y-4'
+>
+  <div>
+    <input
+      type='text'
+      name='nombre'
+      placeholder='Nombre'
+      class='bg-ritual-900 border-eia-500/30 focus:border-eia-500 w-full rounded-lg border px-4 py-3 text-white placeholder-gray-400 transition-colors focus:outline-none'
+    />
+  </div>
+  <div>
+    <input
+      type='text'
+      name='apellido'
+      placeholder='Apellido'
+      class='bg-ritual-900 border-eia-500/30 focus:border-eia-500 w-full rounded-lg border px-4 py-3 text-white placeholder-gray-400 transition-colors focus:outline-none'
+    />
+  </div>
+  <div>
+    <select
+      name='province'
+      required
+      class='bg-ritual-900 border-eia-500/30 focus:border-eia-500 w-full rounded-lg border px-4 py-3 text-white transition-colors focus:outline-none'
+    >
+      <option
+        selected
+        disabled
+      >
+        Provincia
+      </option>
+      {PROVINCES.map(({ text, value }) => <option value={value}>{text}</option>)}
+    </select>
+  </div>
+  <button
+    type='submit'
+    class='bg-vessel-600 hover:bg-vessel-500 w-full rounded-lg py-3 font-semibold text-white transition-colors duration-300'
+  >
+    Unirse a la Comunidad
+  </button>
+</form>
+
+<script>
+  import { PROVINCES } from '~/constants'
+
+  const $form = document.querySelector('#join-form') as HTMLFormElement
+  const $btn = document.querySelector('#join-form button') as HTMLButtonElement
+
+  type FDEV = FormDataEntryValue | ''
+
+  const handlerSubmit = async (_e: MouseEvent) => {
+    const form = new FormData($form)
+    const [name, lastName, province] = [
+      form.get('name') ?? '',
+      form.get('lastName') ?? '',
+      form.get('province') ?? '',
+    ] as [FDEV, FDEV, FDEV]
+
+    const provinceName = PROVINCES.find(({ value }) => value === province)?.text ?? ''
+
+    await fetch('/api/worshippers', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        lastName,
+        province: provinceName,
+      }),
+    })
+  }
+
+  $btn.addEventListener('click', handlerSubmit)
+</script>

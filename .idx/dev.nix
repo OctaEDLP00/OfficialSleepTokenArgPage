@@ -1,14 +1,11 @@
 { pkgs, ... }: {
-  channel= "24.11";
+  channel = "stable-24.11";
 
-  packages = [
-    pkgs.nodejs_23
-    pkgs.corepack_22
-  ];
-
+  packages = [ pkgs.nodejs_23 pkgs.corepack_22 ];
   env = {};
   idx = {
     extensions = [
+      "marcoq.vscode-typescript-to-json-schema"
       "astro-build.astro-vscode"
       "esbenp.prettier-vscode"
       "dbaeumer.vscode-eslint"
@@ -34,14 +31,16 @@
       "zhuangtongfa.material-theme"
       "christian-kohler.path-intellisense"
       "YuTengjing.vscode-archive"
-      "red-hat.vscode-yaml"
-      "red-hat.vscode-xml"
       "yzhang.markdown-all-in-one"
+      "redhat.vscode-xml"
+      "redhat.vscode-yaml"
+      "christian-kohler.npm-intellisense"
+      "eamodio.gitlens"
     ];
 
     workspace = {
       onCreate = {
-        pnpm-install = "pnpm i"
+        install = ''pnpm i'';
       };
     };
 
@@ -49,10 +48,11 @@
       enable = true;
       previews = {
         web = {
-          command = [ "pnpm" "run" "dev" "--port" "$PORT" "--hostname" "0.0.0.0" ];
-          manager = "web"
-        }
-      }
+          command =
+            [ "pnpm" "run" "dev" "--port" "$PORT" "--hostname" "0.0.0.0" ];
+          manager = "web";
+        };
+      };
     };
   };
 }

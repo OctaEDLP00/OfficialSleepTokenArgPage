@@ -3,15 +3,15 @@ import { Font } from 'astro:assets'
 import type { Preload } from '~/types/index.d'
 
 interface Props {
-	title: string
-	description: string
-	preload?: Array<Preload>
-	canonical?: string
-	image?: string
+  title: string
+  description: string
+  preload?: Array<Preload>
+  canonical?: string
+  image?: string
 }
 
-const { title, description, canonical, preload, image } = Astro.props
-
+const { title, description, preload, image } = Astro.props
+/*
 const determineCanonicalURL = () => {
 	if (Astro.url.host.includes('localhost')) {
 		return 'http://localhost:4321'
@@ -23,135 +23,138 @@ const determineCanonicalURL = () => {
 	return canonical || Astro.url.pathname
 }
 const canonicalUrl = new URL(determineCanonicalURL(), Astro.site)
+*/
 ---
 
 <meta charset='UTF-8' />
 <meta
-	name='viewport'
-	content='width=device-width'
+  name='viewport'
+  content='width=device-width'
 />
 <meta
-	name='description'
-	content={description}
+  name='description'
+  content={description}
 />
 <meta
-	name='theme-color'
-	content='#'
+  name='theme-color'
+  content='#'
 />
 <meta
-	name='keywords'
-	content='Sleep Token, ST, Sleep Token Argentina, ST Argentina, Fan Page, Adoradores, Worshipers'
+  name='keywords'
+  content='Sleep Token, ST, Sleep Token Argentina, ST Argentina, Fan Page, Adoradores, Worshipers'
 />
 
 <link
-	rel='icon'
-	type='image/svg+xml'
-	href='/favicon.svg'
+  rel='icon'
+  type='image/webp'
+  href='/images/icons/st_arg_icon.webp'
 />
 <link
-	rel='apple-touch-icon'
-	href='/favicon.png'
+  rel='apple-touch-icon'
+  href='/images/icons/st_arg_icon.webp'
 />
 <link
-	rel='manifest'
-	href='/manifest.json'
+  rel='manifest'
+  href='/manifest.webmanifest'
 />
 <meta
-	name='msapplication-theme'
-	content='#0099ff'
+  name='msapplication-theme'
+  content='#0099ff'
 />
 <meta
-	name='msapplication-config'
-	content='browserconfig.xml'
+  name='msapplication-config'
+  content='browserconfig.xml'
 />
 
+<!--
 <link
 	rel='canonical'
 	href={canonicalUrl}
-/>
+/> -->
 <!-- Open Graph Facebook and other pages -->
+<!--
 <meta
 	property='og:url'
 	content={canonicalUrl}
+/> -->
+<meta
+  property='og:type'
+  content='website'
 />
 <meta
-	property='og:type'
-	content='website'
+  property='og:title'
+  content={title}
 />
 <meta
-	property='og:title'
-	content={title}
+  property='og:description'
+  content={description}
 />
 <meta
-	property='og:description'
-	content={description}
+  property='og:image'
+  content={image}
 />
 <meta
-	property='og:image'
-	content={image}
+  name='og:site_name'
+  content='Sleep Token Argentina'
 />
 <meta
-	name='og:site_name'
-	content='Sleep Token Argentina'
-/>
-<meta
-	name='og:locale'
-	content='es_AR'
+  name='og:locale'
+  content='es_AR'
 />
 <!-- Open Graph Twitter and other pages -->
 <meta
-	name='twitter:card'
-	content='summary_large_image'
+  name='twitter:card'
+  content='summary_large_image'
 />
 <meta
-	name='twitter:site'
-	content='@SleepTokenArg'
+  name='twitter:site'
+  content='@SleepTokenArg'
 />
 <meta
-	name='twitter:creator'
-	content='@CaroOcta00'
+  name='twitter:creator'
+  content='@CaroOcta00'
 />
 <meta
-	name='twitter:title'
-	content={title}
+  name='twitter:title'
+  content={title}
 />
 <meta
-	name='twitter:description'
-	content={description}
+  name='twitter:description'
+  content={description}
 />
 <meta
-	name='twitter:image'
-	content={image}
+  name='twitter:image'
+  content={image}
 />
 
 <!-- Robots and googlebot -->
 <meta
-	name='robots'
-	content='index, follow'
+  name='robots'
+  content='index, follow'
 />
 <meta
-	name='googlebot'
-	content='index, follow'
+  name='googlebot'
+  content='index, follow'
 />
 
 <!-- <link rel='preload' href='' />  -->
 {
-	preload?.map(({ href, as, type, rel = 'preload', crossorigin }) => (
-		<link
-			rel={rel}
-			href={href}
-			as={as}
-			type={type}
-			crossorigin={crossorigin}
-		/>
-	))
+  preload?.map(({ href, as, type, rel = 'preload', crossorigin }) => (
+    <link
+      rel={rel}
+      href={href}
+      as={as}
+      type={type}
+      crossorigin={crossorigin}
+    />
+  ))
 }
 
 <Font
-	cssVariable='--font-inter'
-	preload
+  cssVariable='--font-montserrat'
+  preload
 />
 <Font
-	cssVariable='--font-cinzel'
-	preload
+  cssVariable='--font-cinzel'
+  preload
 />

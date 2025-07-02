@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content'
+import NewsletterItem from '~/components/newsletter/NewsletterItem.astro'
+
+const NEWSLETTERS = await getCollection('newsletter')
+---
+
+<section class='mx-auto mb-12 max-w-6xl px-4'>
+  <h2 class='text-eia-500 mb-8 text-2xl font-bold'>Newsletters Recientes</h2>
+
+  <div class='space-y-6'>
+    {
+      NEWSLETTERS.map(({ data: { title, publishDate, description, readingTime }, slug }) => (
+        <a href={`/newsletter/${slug}`}>
+          <NewsletterItem
+            title={title}
+            date={publishDate}
+            description={description}
+            readingTime={readingTime}
+          />
+        </a>
+      ))
+    }
+
+    <!--
+    NEWSLETTER ITEM COMPONENT - Reusable
+    <article class='bg-ritual-800 border-eia-500 rounded-lg border-l-4 p-6'>
+      <div class='mb-4 flex items-start justify-between'>
+        <div>
+          <h3 class='text-eia-300 mb-2 text-xl font-semibold'>
+            🎵 Even In Arcadia: Análisis Completo del Nuevo Álbum
+          </h3>
+          <p class='text-sm text-gray-400'>Enviado el 8 de Enero, 2025</p>
+        </div>
+        <span class='bg-eia-500 text-ritual-900 rounded-full px-3 py-1 text-sm font-medium'
+          >Nuevo</span
+        >
+      </div>
+      <p class='mb-4 text-gray-300'>
+        Desglosamos cada track del nuevo álbum, exploramos las letras más profundas y compartimos
+        las reacciones de la comunidad argentina. Incluye entrevistas exclusivas con adoradores
+        locales.
+      </p>
+      <div class='flex items-center justify-between'>
+        <div class='flex space-x-4 text-sm text-gray-400'>
+          <span>📖 Lectura de 8 min</span>
+          <span>👥 1,247 suscriptores</span>
+        </div>
+        <button class='text-eia-500 hover:text-eia-300 transition-colors'> Leer completo → </button>
+      </div>
+    </article>
+
+    <article class='bg-ritual-800 border-eia-500/50 rounded-lg border-l-4 p-6'>
+      <div class='mb-4 flex items-start justify-between'>
+        <div>
+          <h3 class='text-eia-300 mb-2 text-xl font-semibold'>
+            🎭 Resumen de Rituales de Diciembre
+          </h3>
+          <p class='text-sm text-gray-400'>Enviado el 2 de Enero, 2025</p>
+        </div>
+      </div>
+      <p class='mb-4 text-gray-300'>
+        Un repaso por todos los encuentros realizados en diciembre, fotos exclusivas de los rituales
+        en Buenos Aires, Córdoba y Rosario, y planes para los próximos eventos de 2025.
+      </p>
+      <div class='flex items-center justify-between'>
+        <div class='flex space-x-4 text-sm text-gray-400'>
+          <span>📖 Lectura de 5 min</span>
+          <span>👥 1,198 suscriptores</span>
+        </div>
+        <button class='text-eia-500 hover:text-eia-300 transition-colors'> Leer completo → </button>
+      </div>
+    </article>
+
+    <article class='bg-ritual-800 border-eia-500/50 rounded-lg border-l-4 p-6'>
+      <div class='mb-4 flex items-start justify-between'>
+        <div>
+          <h3 class='text-eia-300 mb-2 text-xl font-semibold'>
+            🎨 Galería: Las Mejores Ofrendas de 2024
+          </h3>
+          <p class='text-sm text-gray-400'>Enviado el 28 de Diciembre, 2024</p>
+        </div>
+      </div>
+      <p class='mb-4 text-gray-300'>
+        Una selección especial de las creaciones más impactantes del año, desde arte digital hasta
+        covers musicales, pasando por fotografías de rituales y artesanías únicas.
+      </p>
+      <div class='flex items-center justify-between'>
+        <div class='flex space-x-4 text-sm text-gray-400'>
+          <span>📖 Lectura de 6 min</span>
+          <span>👥 1,156 suscriptores</span>
+        </div>
+        <button class='text-eia-500 hover:text-eia-300 transition-colors'> Leer completo → </button>
+      </div>
+    </article>
+    -->
+  </div>
+</section>

@@ -17,6 +17,7 @@
 		"aaron-bond.better-comments",
 		"mrmlnc.vscode-duplicate",
 		"ctcuff.font-preview",
+		"eamodio.gitlens",
 		"miguelsolorio.fluent-icons",
 		"codezombiech.gitignore",
 		"GitHub.vscode-pull-request-github",
@@ -35,6 +36,7 @@
 		"miguelsolorio.symbols",
 		"marcoq.vscode-typescript-to-json-schema",
 		"talhabalaj.actual-font-changer",
-		"thomascsd.vscode-readme-pattern"
+		"thomascsd.vscode-readme-pattern",
+		"christian-kohler.npm-intellisense"
 	]
 }

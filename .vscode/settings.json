@@ -1,41 +1,64 @@
 {
-	"editor.codeActionsOnSave": {
-		"source.fixAll": "explicit",
-		"source.fixAll.eslint": "explicit"
-	},
-	"files.associations": {
-		"*.mdx": "markdown",
-		"*.css": "tailwindcss",
-		"*.svg": "xml"
-	},
-	"editor.quickSuggestions": {
-		"strings": "on"
-	},
-	"editor.formatOnSave": true,
-	"editor.defaultFormatter": "esbenp.prettier-vscode",
-	"eslint.enable": true,
-	"eslint.format.enable": true,
-	"eslint.run": "onSave",
-	"eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "astro"],
-	"prettier.enable": true,
-	"prettier.documentSelectors": ["**/*.astro"],
-	"[astro]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[javascript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[typescript]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[html]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[json]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[jsonc]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"css.customData": [".vscode/tailwindcss.json"]
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  "files.associations": {
+    "*.mdx": "markdown",
+    "*.css": "tailwindcss",
+    "*.svg": "xml"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.enable": true,
+  "eslint.format.enable": true,
+  "eslint.run": "onSave",
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "astro"],
+  "prettier.enable": true,
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "css.customData": [".vscode/tailwindcss.json"],
+  "json.schemas": [
+    {
+      "url": "http://json-schema.org/draft-07/schema",
+      "fileMatch": ["/public/schemas/*.schema.json"]
+    },
+    {
+      "url": "/public/schemas/discographies.schema.json",
+      "fileMatch": ["/src/data/discographies.json"]
+    },
+    {
+      "url": "/public/schemas/testimonial.schema.json",
+      "fileMatch": ["/src/data/testimonials.json"]
+    },
+    {
+      "url": "/public/schemas/worshippers.schema.json",
+      "fileMatch": ["/src/data/worshippers.json"]
+    }
+  ],
+  "editor.wordWrap": "on",
+  "IDX.aI.enableInlineCompletion": true,
+  "IDX.aI.enableCodebaseIndexing": true,
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": true
 }

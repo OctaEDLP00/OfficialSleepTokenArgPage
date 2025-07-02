@@ -1,0 +1,30 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import { getEntry, render } from 'astro:content'
+
+const { id } = Astro.params
+if (id === undefined) {
+  return Astro.redirect('/404')
+}
+
+const newsletter = await getEntry('newsletter', id)
+if (newsletter === undefined) {
+  return Astro.redirect('/404')
+}
+
+if (!newsletter) throw new Error(`Could not find newsletter with id ${id}`)
+const { data } = newsletter
+const { title, description, readingTime } = data
+const { Content } = await render(newsletter)
+---
+
+<Layout
+  title={`${title} Nesletter | Read Time ${readingTime}`}
+  description={description}
+>
+  <main class='container flex w-full items-center justify-center py-32'>
+    <div class='prose'>
+      <Content />
+    </div>
+  </main>
+</Layout>

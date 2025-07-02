@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
 @theme {
   --color-ritual-950: #050505;
@@ -25,8 +26,117 @@
   --color-vessel-100: #ede9fe;
   --color-vessel-50: #f5f3ff;
 
+  --color-eia-950: #500724;
+  --color-eia-900: #831843;
+  --color-eia-800: #9d174d;
+  --color-eia-700: #be185d;
+  --color-eia-600: #db2777;
+  --color-eia-500: #ec4899;
+  --color-eia-400: #f472b6;
+  --color-eia-300: #f9a8d4;
+  --color-eia-200: #fbcfe8;
+  --color-eia-100: #fce7f3;
+  --color-eia-50: #fdf2f8;
+
+  --color-tmbte-950: #4d2e17;
+  --color-tmbte-900: #8f5a2f;
+  --color-tmbte-800: #b06d35;
+  --color-tmbte-700: #d18843;
+  --color-tmbte-600: #e8a668;
+  --color-tmbte-500: #f1c294;
+  --color-tmbte-400: #f6d7b8;
+  --color-tmbte-300: #fae8d4;
+  --color-tmbte-200: #fdf2e7;
+  --color-tmbte-100: #fef9f3;
+  --color-tmbte-50: #fefdfb;
+
+  --color-tpwbyt-950: #082f49;
+  --color-tpwbyt-900: #0c4a6e;
+  --color-tpwbyt-800: #075985;
+  --color-tpwbyt-700: #0369a1;
+  --color-tpwbyt-600: #0284c7;
+  --color-tpwbyt-500: #0ea5e9;
+  --color-tpwbyt-400: #38bdf8;
+  --color-tpwbyt-300: #7dd3fc;
+  --color-tpwbyt-200: #bae6fd;
+  --color-tpwbyt-100: #e0f2fe;
+  --color-tpwbyt-50: #f0f9ff;
+
+  --color-sundowning-950: #030712;
+  --color-sundowning-900: #111827;
+  --color-sundowning-800: #1f2937;
+  --color-sundowning-700: #374151;
+  --color-sundowning-600: #4b5563;
+  --color-sundowning-500: #6b7280;
+  --color-sundowning-400: #9ca3af;
+  --color-sundowning-300: #d1d5db;
+  --color-sundowning-200: #e5e7eb;
+  --color-sundowning-100: #f3f4f6;
+  --color-sundowning-50: #f9fafb;
+
+  --color-discord: #5865f2;
+  --color-instagram-yellow: #fed373;
+  --color-instagram-orange: #f15245;
+  --color-instagram-pink: #d92e7f;
+  --color-instagram-purple: #9b36b7;
+  --color-instagram-blue: #515ecf;
+
   --font-ritual: 'Cinzel', 'serif';
-  --font-vessel: 'Inter', 'sans-serif';
+  --font-vessel: 'Monserrat', 'sans-serif';
+
+  --animate-fade-in-up: fadeInUp;
+  --animate-pulse: pulse;
+  --animate-slide-in-from-bottom: slideInFromBottom;
+  --animate-loading: loading;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes slideInFromBottom {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes loading {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+}
+
+@custom-variant hover-lift {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  @variant hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(190, 24, 93, 0.2);
+  }
 }
 
 @utility clip-triangle {
@@ -38,10 +148,9 @@
 }
 
 @utility text-shadow-sm {
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 @utility text-shadow-lg {
-  text-shadow: 0 4px 8px rgba(0,0,0,0.8);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
-

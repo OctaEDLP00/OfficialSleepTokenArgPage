@@ -1,0 +1,75 @@
+---
+import type { Icon, Image } from '~/types'
+import TeamMember from './TeamMember.astro'
+
+import Instagram from '~/assets/instagram.svg'
+import X from '~/assets/x.svg'
+import Github from '~/assets/github.svg'
+
+const MEMBERS = [
+  {
+    nameMember: 'Octavio Caro',
+    rolMember: 'Programador, Diseñador, Administrador',
+    image: {
+      src: '/images/team/octavio_caro.webp',
+      alt: 'Imagen de Perfil de Github del team',
+      width: '380',
+      height: '380',
+    },
+    socialMedia: [
+      {
+        Icon: Github,
+        href: 'https://github.com/octaviocaro',
+        rel: 'noopener noreferrer',
+        target: '_blank',
+        title: 'Github',
+      },
+      {
+        Icon: X,
+        href: 'https://x.com/CaroOcta00',
+        rel: 'noopener noreferrer',
+        target: '_blank',
+        title: 'Twitter',
+      },
+      {
+        Icon: Instagram,
+        href: 'https://instagram.com/octaviocaro_24.astro',
+        rel: 'noopener noreferrer',
+        target: '_blank',
+        title: 'Instagram',
+      },
+    ],
+  },
+] satisfies Array<{
+  nameMember: string
+  rolMember: string
+  image: Image
+  socialMedia: Array<
+    {
+      href: string
+      rel: string
+      target: string
+      className?: string
+      Icon: Icon
+    } & { [key: string]: any }
+  >
+}>
+---
+
+<div class='bg-ritual-800 rounded-lg p-8'>
+  <h2 class='text-eia-500 mb-6 text-2xl font-bold'>Equipo Administrativo</h2>
+  <div class='space-y-4'>
+    {
+      MEMBERS.map(({ nameMember, rolMember, image, socialMedia }) => {
+        return (
+          <TeamMember
+            nameMember={nameMember}
+            rolMember={rolMember}
+            image={image}
+            socialMedia={socialMedia}
+          />
+        )
+      })
+    }
+  </div>
+</div>

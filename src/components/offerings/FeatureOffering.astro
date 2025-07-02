@@ -1,0 +1,38 @@
+---
+import type { Image } from '~/types'
+
+interface Props {
+  title: string
+  by: string
+  filter: string
+  description: string
+  image: Image
+}
+
+const { title, by, image, description } = Astro.props
+---
+
+<div class='bg-ritual-800 overflow-hidden rounded-lg'>
+  <div class='flex h-96 items-center justify-center'>
+    <img
+      src={image.src}
+      alt={image.alt}
+      width={image.width}
+      height={image.height}
+    />
+  </div>
+  <div class='p-6'>
+    <h3 class='text-eia-300 mb-2 text-2xl font-semibold'>{title}</h3>
+    <p class='mb-4 text-gray-400'>by {by}</p>
+    <p class='mb-6 text-gray-300'>
+      {description}
+    </p>
+    <div class='flex items-center justify-between'>
+      <div class='flex space-x-4'>
+        <span class='bg-ritual-700 rounded-full px-3 py-1 text-sm'>Digital Art</span>
+        <span class='bg-ritual-700 rounded-full px-3 py-1 text-sm'>Vessel</span>
+        <span class='bg-ritual-700 rounded-full px-3 py-1 text-sm'>Mask</span>
+      </div>
+    </div>
+  </div>
+</div>

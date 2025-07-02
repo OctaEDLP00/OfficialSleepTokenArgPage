@@ -1,0 +1,26 @@
+---
+import type { Discographies } from '~/types'
+import AlbumCard from '~/components/discography/AlbumCard.astro'
+
+const response = await fetch(new URL('/api/discographies', Astro.url))
+const { albums: DISCOGRAPHIES } = (await response.json()) as Discographies
+---
+
+<section
+  data-name='AlbumGrid'
+  class='mx-auto max-w-6xl px-4'
+>
+  <h2 class='text-eia-500 mb-8 text-2xl font-bold'>Álbums</h2>
+  <div class='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+    {
+      DISCOGRAPHIES.map(({ name, slug, image, releaseDate }) => (
+        <AlbumCard
+          image={image}
+          name={name}
+          slug={slug}
+          releaseDate={releaseDate}
+        />
+      ))
+    }
+  </div>
+</section>
