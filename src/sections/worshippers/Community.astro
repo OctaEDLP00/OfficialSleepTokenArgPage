@@ -1,24 +1,24 @@
+---
+import StatCard from "~/components/worshippers/StatCard.astro"
+import type { ProvinceText, Worshippers, Rituals, Offerings } from "~/types"
+
+const resWorshippers = await fetch(new URL('/api/worshippers', Astro.url))
+const resRituals = await fetch(new URL('/api/rituals', Astro.url))
+const resOfferings = await fetch(new URL('/api/offerings', Astro.url))
+const WORSHIPPERS = await resWorshippers.json() as Worshippers
+const RITUALS = await resRituals.json() as Rituals
+const OFFERINGS = await resOfferings.json() as Offerings
+const WORSHIPPER_COUNT_BY_PROVINCE = [...new Set<ProvinceText>(WORSHIPPERS.map(({ province }) => province))].length
+---
+
 <section
   data-name='Community'
   class='mx-auto mb-12 max-w-6xl px-4'
 >
   <div class='grid grid-cols-2 gap-6 md:grid-cols-4'>
-    <!-- STAT CARD COMPONENT - Reusable -->
-    <div class='bg-ritual-800 rounded-lg p-6 text-center'>
-      <div class='text-eia-500 mb-2 text-3xl font-bold'>2,847</div>
-      <div class='text-gray-400'>Adoradores Totales</div>
-    </div>
-    <div class='bg-ritual-800 rounded-lg p-6 text-center'>
-      <div class='text-eia-500 mb-2 text-3xl font-bold'>12</div>
-      <div class='text-gray-400'>Ciudades</div>
-    </div>
-    <div class='bg-ritual-800 rounded-lg p-6 text-center'>
-      <div class='text-eia-500 mb-2 text-3xl font-bold'>156</div>
-      <div class='text-gray-400'>Rituales Realizados</div>
-    </div>
-    <div class='bg-ritual-800 rounded-lg p-6 text-center'>
-      <div class='text-eia-500 mb-2 text-3xl font-bold'>89</div>
-      <div class='text-gray-400'>Ofrendas Creadas</div>
-    </div>
+    <StatCard count={WORSHIPPERS.length} text='Adoradores Totales' />
+    <StatCard count={WORSHIPPER_COUNT_BY_PROVINCE} text='Provincias' />
+    <StatCard count={RITUALS.previous_rituals.length} text='Rituales Realizados' />
+    <StatCard count={OFFERINGS.length} text='Ofrendas Creadas' />
   </div>
 </section>

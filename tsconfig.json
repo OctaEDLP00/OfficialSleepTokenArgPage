@@ -1,6 +1,6 @@
 {
   "extends": "astro/tsconfigs/strictest",
-  "include": [".astro/types.d.ts", "**/*"],
+  "include": [".astro/types.d.ts", "**/*", ".trash/actions"],
   "exclude": ["dist"],
   "compilerOptions": {
     "strictNullChecks": true,

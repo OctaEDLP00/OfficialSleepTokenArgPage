@@ -11,7 +11,7 @@ export default [
   ...pluginAstro.configs['flat/recommended'],
   ...pluginAstro.configs['flat/jsx-a11y-recommended'],
   {
-    languageOptions: { ...globals }
+    languageOptions: { ...globals },
     files: ['**/*.{js,mjs}', '**/*.ts'],
     ...configLove,
     rules: {

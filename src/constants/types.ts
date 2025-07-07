@@ -51,3 +51,33 @@ export const PROVINCES_ID = {
   tierra_del_fuego: 'tierra-del-fuego',
   tucuman: 'tucuman',
 } as const
+
+export const MONTH_ID = {
+  Enero: 'enero',
+  Febrero: 'febrero',
+  Marzo: 'marzo',
+  Abril: 'abril',
+  Mayo: 'mayo',
+  Junio: 'junio',
+  Julio: 'julio',
+  Agosto: 'agosto',
+  Septiembre: 'septiembre',
+  Octubre: 'octubre',
+  Noviembre: 'noviembre',
+  Diciembre: 'diciembre',
+} as const
+
+export const MONTH_TEXT = {
+  Enero: 'Enero',
+  Febrero: 'Febrero',
+  Marzo: 'Marzo',
+  Abril: 'Abril',
+  Mayo: 'Mayo',
+  Junio: 'Junio',
+  Julio: 'Julio',
+  Agosto: 'Agosto',
+  Septiembre: 'Septiembre',
+  Octubre: 'Octubre',
+  Noviembre: 'Noviembre',
+  Diciembre: 'Diciembre',
+} as const

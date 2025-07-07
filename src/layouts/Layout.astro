@@ -36,12 +36,12 @@ const lang = getLangFromURL(Astro.url)
     width: 0.5rem;
   }
   html::-webkit-scrollbar-track {
-    background: #0a0a0a;
+    background: var(--color-ritual-900);
   }
   html::-webkit-scrollbar-thumb {
-    background: #6d28d9;
+    background: var(--color-eia-500);
     border-radius: 9px;
-    border: 1px solid #6d28d9;
+    border: 1px solid var(--color-eia-500);
   }
 
   html::selection {

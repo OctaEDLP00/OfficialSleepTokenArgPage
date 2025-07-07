@@ -14,6 +14,7 @@ const newsletter = defineCollection({
   }),
 })
 
+/*
 const testimonials = defineCollection({
   type: 'data',
   schema: z.array(
@@ -114,10 +115,12 @@ const worshippers = defineCollection({
     }),
   ),
 })
-
+*/
 export const collections = {
   newsletter,
+  /*
   testimonials,
   discographies,
   worshippers,
+  */
 }

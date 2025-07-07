@@ -4,9 +4,14 @@ import { defineConfig, fontProviders } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import tailwindcss from '@tailwindcss/vite'
 
+import vercel from '@astrojs/vercel'
+
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
+  devToolbar: {
+    enabled: false,
+  },
   integrations: [mdx()],
   experimental: {
     fonts: [
@@ -33,4 +38,5 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  adapter: vercel(),
 })

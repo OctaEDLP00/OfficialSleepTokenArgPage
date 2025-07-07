@@ -1,0 +1,39 @@
+{
+  "next_rituals": [
+    {
+      "title_ritual": "",
+      "place": "",
+      "description": "",
+      "province": "",
+      "time": "",
+      "confirmed_worshippers": 0
+    },
+    {
+      "title_ritual": "",
+      "place": "",
+      "description": "",
+      "province": "",
+      "time": "",
+      "confirmed_worshippers": 0
+    },
+    {
+      "title_ritual": "",
+      "place": "",
+      "description": "",
+      "province": "",
+      "time": "",
+      "confirmed_worshippers": 0
+    }
+  ],
+  "previous_rituals": [
+    {
+      "title_ritual": "",
+      "place": "",
+      "description": "",
+      "province": "",
+      "time": "",
+      "month": "",
+      "assists": 0
+    }
+  ]
+}

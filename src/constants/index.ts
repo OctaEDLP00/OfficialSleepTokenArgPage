@@ -5,7 +5,7 @@ import Instagram from '~/assets/instagram.svg'
 import Phone from '~/assets/phone.svg'
 import X from '~/assets/x.svg'
 import Youtube from '~/assets/youtube.svg'
-import type { AlbumSongs, Province } from '~/types/index.d'
+import type { Icon, Province } from '~/types/index.d'
 
 export const PROVINCES = [
 	{

@@ -1,5 +1,6 @@
-import type { PROVINCES_ID, PROVINCES_TEXT } from '~/constants/types'
+import type { PROVINCES_ID, PROVINCES_TEXT, MONTH_ID, MONTH_TEXT } from '~/constants/types'
 import type { ImageMetadata } from 'astro'
+import type { number } from 'astro:schema'
 
 type Props = astroHTML.JSX.SVGAttributes
 type Icon = ((_props: Props) => any) & ImageMetadata
@@ -13,19 +14,8 @@ type Time = `${number}:${number}`
 type Rel = 'noreferrer noopener' | 'noopener' | 'noreferrer'
 type Target = '_blank' | '_self' | '_top' | '_parent'
 
-type Month =
-  | 'Enero'
-  | 'Febrero'
-  | 'Marzo'
-  | 'Abril'
-  | 'Mayo'
-  | 'Junio'
-  | 'Julio'
-  | 'Agosto'
-  | 'Septiembre'
-  | 'Octubre'
-  | 'Noviembre'
-  | 'Diciembre'
+type MonthId = (typeof MONTH_ID)[keyof typeof MONTH_ID]
+type MonthText = (typeof MONTH_TEXT)[keyof typeof MONTH_TEXT]
 
 type FixedTuple<T extends unknown> = [T, ...T[]]
 type Tuple<T extends [unknown, ...unknown[]]> = T
@@ -81,6 +71,34 @@ interface Province {
   value: ProvinceId
 }
 
+interface NextEventRituals {
+  title_ritual: string
+  place: string
+  description: string
+  province: string
+  time: string
+  confirmed_worshippers: number
+}
+
+interface PreviousEvntRitual {
+  title_ritual: string
+  place: string
+  description: string
+  province: string
+  time: string
+  month: MonthText
+  year: string | number
+}
+
+interface Rituals {
+  next_rituals: Array<NextEventRituals>
+  previous_rituals: Array<PreviousEvntRitual>
+}
+
+interface Offering {}
+
+type Offerings = Array<Offering>
+
 export type {
   Discographies,
   Discography,
@@ -88,12 +106,14 @@ export type {
   Icon,
   Image,
   Month,
+  Offerings,
   Preload,
   Province,
   ProvinceId,
   ProvinceText,
   Rel,
   ReleaseDate,
+  Rituals,
   Song,
   Target,
   Testimonial,

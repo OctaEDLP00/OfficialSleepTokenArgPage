@@ -1,0 +1,13 @@
+---
+interface Props {
+  count: string | number
+  text: string
+}
+
+const { count, text } = Astro.props
+---
+
+<div class='bg-ritual-800 rounded-lg p-6 text-center'>
+  <div class='text-eia-500 mb-2 text-3xl font-bold'>{count}</div>
+  <div class='text-gray-400'>{text}</div>
+</div>
