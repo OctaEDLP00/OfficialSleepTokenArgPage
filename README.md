@@ -1,48 +1,54 @@
-# Astro Starter Kit: Basics
+# Sleep Token — Comunidad Argentina
 
-```sh
-bun create astro@latest -- --template basics
-```
+![Vista previa del sitio](./593_1x_shots_so.png)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Bienvenidos al santuario argentino de **Sleep Token**.
+Un espacio creado para honrar la música, los rituales y el misterio que rodea a esta banda única.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+🌑 Este sitio es una plataforma de encuentro para los **adoradores** de Sleep Token en Argentina. Aquí podrás explorar la discografía, sumarte a rituales, unirte a nuestra newsletter y formar parte de una comunidad que trasciende lo convencional.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+---
 
-## 🚀 Project Structure
+## 🚀 Sitio en Producción
 
-Inside of your Astro project, you'll see the following folders and files:
+👉 [https://official-sleep-token-arg-page.vercel.app/](https://official-sleep-token-arg-page.vercel.app/)
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+---
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## 📌 Secciones destacadas
 
-## 🧞 Commands
+- **Discografía**: Recorre los lanzamientos de Sleep Token desde sus inicios hasta lo último.
+- **Rituales**: Participá en eventos y ceremonias online u offline dedicadas a la banda.
+- **Adoradores**: Unite al registro de fans y seguidores de la comunidad.
+- **Ofrecidas**: Espacio para aportes creativos, fan art y proyectos relacionados.
+- **Newsletter**: Recibí novedades exclusivas, rituales y noticias por correo.
+- **Contacto**: Dejanos tus mensajes, ideas o colaboraciones.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
+## 🧪 Stack Tecnológico
 
-## 👀 Want to learn more?
+- **Framework**: [Astro](https://astro.build/) (o el que estés usando si es otro)
+- **Despliegue**: [Vercel](https://vercel.com/)
+- **Estilos**: CSS personalizado, con foco en estética oscura y acentos neón
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## 🖤 Créditos
+
+Este sitio fue creado por fans y para fans, sin fines comerciales.
+Sleep Token pertenece a sus respectivos autores y esta es una iniciativa de tributo.
+
+---
+
+## 🤝 Contribuciones
+
+¿Querés sumar contenido o colaborar con el proyecto?
+Abrí un issue o mandá un pull request. ¡Toda ayuda es bienvenida!
+
+---
+
+## ⚠️ Licencia
+
+Este sitio está bajo la [Licencia MIT](./LICENSE), pero por respeto a los derechos de autor, no se permite la monetización del contenido oficial de la banda.
+
