@@ -1,12 +1,11 @@
 {
-  "$ref": "#/definitions/Testimonials",
-  "definitions": {
-    "Testimonials": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Testimonial"
-      }
-    },
+  "title": "",
+  "description": "",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/Testimonial"
+  },
+  "$defs": {
     "Testimonial": {
       "type": "object",
       "properties": {

@@ -1,13 +1,12 @@
 {
-  "$ref": "#/definitions/Worshippers",
-  "definitions": {
-    "Worshippers": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/Worshippper"
-      }
-    },
-    "Worshippper": {
+  "title": "",
+  "description": "",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/Worshipper"
+  },
+  "$defs": {
+    "Worshipper": {
       "type": "object",
       "properties": {
         "name": {

@@ -40,7 +40,7 @@
   "css.customData": [".vscode/tailwindcss.json"],
   "json.schemas": [
     {
-      "url": "http://json-schema.org/draft-07/schema",
+      "url": "https://json-schema.org/draft/2020-12/schema",
       "fileMatch": ["/public/schemas/*.schema.json"]
     },
     {
