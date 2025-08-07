@@ -4,11 +4,16 @@ import Layout from '~/layouts/Layout.astro'
 // import Featured from '~/sections/Featured.astro'
 // import LatestNews from '~/sections/LatestNews.astro'
 // import Community from '~/sections/Community.astro'
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
 ---
 
 <Layout
-  title='Sleep Token Argentina | Comunidad de Adoradores'
-  description=''
+  title={t('main.page.index.title')}
+
+  description={t('main.page.index.description')}
 >
   <Hero />
   <main>

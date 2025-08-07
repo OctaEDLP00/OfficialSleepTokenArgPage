@@ -6,11 +6,15 @@ import Testimonials from '~/sections/worshippers/Testimonials.astro'
 import JoinCommunity from '~/sections/worshippers/JoinCommunity.astro'
 import Hero from '~/components/worshippers/Hero.astro'
 import Layout from '~/layouts/Layout.astro'
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
 ---
 
 <Layout
-  title=''
-  description=''
+  title={t('worshippers.page.index.title')}
+  description={t('worshippers.page.index.description')}
 >
   <Hero />
   <main class='pb-32'>

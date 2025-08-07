@@ -1,39 +1,52 @@
 {
+  "dream_ritual": {
+    "title_ritual": "SLEEP TOKEN EN ARGENTINA",
+    "place": "Teatro Gran Rex / Teatro Vorterix",
+    "description": "Aunque aún no hay un anuncio oficial, soñamos con que Sleep Token visite Argentina por primera vez. Esta sección está dedicada a visualizar ese futuro ritual.",
+    "province": "Buenos Aires",
+    "schedule": "00:00",
+    "date": "2025-11-09"
+  },
   "next_rituals": [
     {
-      "title_ritual": "",
-      "place": "",
-      "description": "",
-      "province": "",
-      "time": "",
-      "confirmed_worshippers": 0
+      "id": 1,
+      "title_ritual": "Ritual de Escucha - Even In Arcadia",
+      "place": "Centro Cultural Recoleta",
+      "description": "Únete a nosotros para una experiencia de escucha colectiva del nuevo álbum. Compartiremos interpretaciones y conectaremos a través de la música.",
+      "province": "Buenos Aires",
+      "schedule": "20:00",
+      "confirmed_worshippers": 45
     },
     {
-      "title_ritual": "",
-      "place": "",
-      "description": "",
-      "province": "",
-      "time": "",
-      "confirmed_worshippers": 0
-    },
-    {
-      "title_ritual": "",
-      "place": "",
-      "description": "",
-      "province": "",
-      "time": "",
-      "confirmed_worshippers": 0
+      "id": 2,
+      "title_ritual": "Encuentro de Adoradores - Cordoba",
+      "place": "Café Cultural Hendrix",
+      "description": "Primera reunión oficial de adoradores cordobeses. Conoce a otros fans, comparte tu pasión y planifica futuros rituales.",
+      "province": "Cordoba",
+      "schedule": "19:30",
+      "confirmed_worshippers": 23
     }
   ],
   "previous_rituals": [
     {
-      "title_ritual": "",
-      "place": "",
-      "description": "",
-      "province": "",
-      "time": "",
-      "month": "",
-      "assists": 0
+      "id": 1,
+      "title_ritual": "Take Me Back To Eden - Listening Party",
+      "description": "Una noche mágica donde 80 adoradores se reunieron para celebrar el álbum anterior.",
+      "city": "Recoleta",
+      "province": "Buenos Aires",
+      "month": "Diciembre",
+      "year": "2025",
+      "assists": 80
+    },
+    {
+      "id": 2,
+      "title_ritual": "Ritual de Meditacion Musical",
+      "description": "Experiencia inmersiva combinando la música de Sleep Token con meditación guiada.",
+      "city": "Rosario",
+      "province": "Santa Fe",
+      "month": "Noviembre",
+      "year": "2025",
+      "assists": 35
     }
   ]
 }

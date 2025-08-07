@@ -1,7 +1,7 @@
 const KEY_TRANSLATIONS = {
-  // Index Page
-  'index.page.title': 'index.page.title',
-  'index.page.description': 'index.page.description',
+  // Main Page
+  'main.page.index.title': 'main.page.index.title',
+  'main.page.index.description': 'main.page.index.description',
   // Navbar
   'nav.ul.home': 'nav.ul.home',
   'nav.ul.discographies': 'nav.ul.discographies',
@@ -29,6 +29,28 @@ const KEY_TRANSLATIONS = {
   'footer.community': 'footer.community',
   'footer.social': 'footer.social',
   'footer.copyright': 'footer.copyright',
+  // Discography
   'discography.page.title': 'discography.page.title',
   'discography.page.description': 'discography.page.description',
+  'discography.page.name-album.title': 'discography.page.name-album.title',
+  'discography.page.name-album.description': 'discography.page.name-album.description',
+  // Offerings
+  'offerings.page.index.title': 'offerings.page.index.title',
+  'offerings.page.index.description': 'offerings.page.index.description',
+  // Rituals
+  'rituals.page.index.title': 'rituals.page.index.title',
+  'rituals.page.index.description': 'rituals.page.index.description',
+  'rituals.page.id.title': 'rituals.page.id.title',
+  'rituals.page.id.description': 'rituals.page.id.description',
+  // Contact
+  'contact.page.title': 'contact.page.title',
+  'contact.page.description': 'contact.page.description',
+  // Newsletter
+  'newsletter.page.index.title': 'newsletter.page.index.title',
+  'newsletter.page.index.description': 'newsletter.page.index.description',
+  'newsletter.page.id.title': 'newsletter.page.id.title',
+  'newsletter.page.id.description': 'newsletter.page.id.title',
+  // Worshippers
+  'worshippers.page.index.title': 'worshippers.page.index.title',
+  'worshippers.page.index.description': 'worshippers.page.index.description',
 } as const

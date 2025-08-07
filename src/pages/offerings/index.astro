@@ -4,11 +4,15 @@ import FeatureArtwork from '~/sections/offerings/FeatureArtwork.astro'
 import GalleryGrid from '~/sections/offerings/GalleryGrid.astro'
 import SubmitArtwork from '~/sections/offerings/SubmitArtwork.astro'
 import Layout from '~/layouts/Layout.astro'
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
 ---
 
 <Layout
-  title=''
-  description=''
+  title={t('offerings.page.index.title')}
+  description={t('offerings.page.index.description')}
 >
   <Hero />
   <main class='pb-32'>

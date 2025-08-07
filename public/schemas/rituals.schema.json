@@ -1,0 +1,146 @@
+{
+  "type": "object",
+  "properties": {
+    "dream_ritual": {
+      "$ref": "#/$defs/dream_ritual"
+    },
+    "next_rituals": {
+      "$ref": "#/$defs/next_rituals"
+    },
+    "previous_rituals": {
+      "$ref": "#/$defs/previous_rituals"
+    }
+  },
+  "$defs": {
+    "dream_ritual": {
+      "type": "object",
+      "properties": {
+        "title_ritual": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "place": {
+          "type": "string"
+        },
+        "province": {
+          "$ref": "#/$defs/province"
+        },
+        "schedule": {
+          "type": "string",
+          "pattern": "^([0-1][0-9]|2[0-3]):[0-5][0-9]$"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "next_rituals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title_ritual": {
+            "type": "string"
+          },
+          "place": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "province": {
+            "$ref": "#/$defs/province"
+          },
+          "schedule": {
+            "type": "string",
+            "pattern": "^([0-1][0-9]|2[0-3]):[0-5][0-9]$"
+          },
+          "confirmed_worshippers": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "previous_rituals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title_ritual": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "province": {
+            "$ref": "#/$defs/province"
+          },
+          "month": {
+            "$ref": "#/$defs/months"
+          },
+          "assists": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    "province": {
+      "type": "string",
+      "enum": [
+        "Buenos Aires",
+        "Catamarca",
+        "Chaco",
+        "Chubut",
+        "Ciudad Autonoma de Buenos Aires",
+        "Cordoba",
+        "Corrientes",
+        "Entre Rios",
+        "Formosa",
+        "Jujuy",
+        "La Pampa",
+        "La Rioja",
+        "Mendoza",
+        "Misiones",
+        "Neuquen",
+        "Rio Negro",
+        "Salta",
+        "San Juan",
+        "San Luis",
+        "Santa Cruz",
+        "Santa Fe",
+        "Santigo del Estero",
+        "Tierra del Fuego, Antartida e Islas del Atlantico Sur",
+        "Tucuman"
+      ]
+    },
+    "months": {
+      "type": "string",
+      "enum": [
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre"
+      ]
+    }
+  }
+}

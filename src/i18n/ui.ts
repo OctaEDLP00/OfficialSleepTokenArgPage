@@ -19,9 +19,10 @@ export const defaultLang: KeyLang = 'es'
  */
 export const ui = {
   es: {
-    // Index Page
-    'index.page.title': 'Album %name% | Fan Page Sleep Token Argentina',
-    'index.page.description': '',
+    // Main Page
+    'main.page.index.title': 'Sleep Token Argentina | Comunidad de Adoradores',
+    'main.page.index.description':
+      'Santuario Argentino de Sleep Token Argentina. Aquí los adoradores se reúnen para celebrar la musica de Sleep Token con rituales y ofrendas.',
     // Navbar
     'nav.ul.home': 'Inicio',
     'nav.ul.discographies': 'Discografia',
@@ -51,13 +52,37 @@ export const ui = {
     'footer.social': 'Siguenos',
     'footer.copyright': 'Sleep Token Argentina. Todos los derechos reservados.',
     // Discography Page
-    'discography.page.index.title': 'Discografia del Sleep Token | Comunidad de Adoradores',
-    'discography.page.index.description': '',
+    'discography.page.index.title': 'Discografia de Sleep Token | Comunidad de Adoradores',
+    'discography.page.index.description':
+      'Aqui encontraras toda la discografia de Sleep Token, como tambien podras escucharla miebtras navegas por la pagina.',
+    'discography.page.name-album.title': 'Album %name% | Fan Page Sleep Token Argentina',
+    'discography.page.name-album.description':
+      'Album %name% de Sleep Token. Escucha el album completo, mira su lista de canciones, lanzamientos y mas.',
+    // Offerings
+    'offerings.page.index.title': 'Ofrendas | Sleep Token Argentina',
+    'offerings.page.index.description': '',
+    // Rituals
+    'rituals.page.index.title': 'Rituales | Sleep Token Argentina',
+    'rituals.page.index.description': '',
+    'rituals.page.id.title': '',
+    'rituals.page.id.description': '',
+    // Contact
+    'contact.page.title': '',
+    'contact.page.description': '',
+    // Newsletter
+    'newsletter.page.index.title': '',
+    'newsletter.page.index.description': '',
+    'newsletter.page.id.title': '%title% Newsletter | Tiempo de lectura %readTime%',
+    'newsletter.page.id.description': '',
+    // Worshippers
+    'worshippers.page.index.title': '',
+    'worshippers.page.index.description': '',
+    //
   },
   en: {
     // Index Page
-    'index.page.title': '',
-    'index.page.description': '',
+    'main.page.index.title': '',
+    'main.page.index.description': '',
     // Navbar
     'nav.ul.home': 'Home',
     'nav.ul.discographies': 'Discographies',
@@ -89,11 +114,32 @@ export const ui = {
     // Discography Page
     'discography.page.index.title': 'Sleep Token Discography | Argentina Community',
     'discography.page.index.description': '',
+    'discography.page.name-album.title': 'Album %name% | Fan Page Sleep Token Argentina',
+    'discography.page.name-album.description': '',
+    // Offerings
+    'offerings.page.index.title': '',
+    'offerings.page.index.description': '',
+    // Rituals
+    'rituals.page.index.title': '',
+    'rituals.page.index.description': '',
+    'rituals.page.id.title': '',
+    'rituals.page.id.description': '',
+    // Contact
+    'contact.page.title': '',
+    'contact.page.description': '',
+    // Newsletter
+    'newsletter.page.index.title': '',
+    'newsletter.page.index.description': '',
+    'newsletter.page.id.title': '%title% Newsletter | Read Time %readTime%',
+    'newsletter.page.id.description': '',
+    // Worshippers
+    'worshippers.page.index.title': '',
+    'worshippers.page.index.description': '',
   },
   fr: {
-    // Index Page
-    'index.page.title': '',
-    'index.page.description': '',
+    // Main Page
+    'main.page.index.title': '',
+    'main.page.index.description': '',
     // Navbar
     'nav.ul.home': 'Début',
     'nav.ul.discographies': 'Discographies',
@@ -125,5 +171,26 @@ export const ui = {
     // Discography Page
     'discography.page.index.title': 'Discographie Sleep Token | Communauté Argentinian',
     'discography.page.index.description': '',
+    'discography.page.name-album.title': 'Album %name% | Page fan jeton sommeil Argentine',
+    'discography.page.name-album.description': '',
+    // Offerings
+    'offerings.page.index.title': '',
+    'offerings.page.index.description': '',
+    // Rituals
+    'rituals.page.index.title': '',
+    'rituals.page.index.description': '',
+    'rituals.page.id.title': '',
+    'rituals.page.id.description': '',
+    // Contact
+    'contact.page.title': '',
+    'contact.page.description': '',
+    // Newsletter
+    'newsletter.page.index.title': '',
+    'newsletter.page.index.description': '',
+    'newsletter.page.id.title': '%title% Bulletin | Temps de lecture %readTime%',
+    'newsletter.page.id.description': '',
+    // Worshippers
+    'worshippers.page.index.title': '',
+    'worshippers.page.index.description': '',
   },
 } satisfies UI<KeyLang, KeyTranslation>

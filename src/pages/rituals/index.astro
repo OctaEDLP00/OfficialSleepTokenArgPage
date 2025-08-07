@@ -5,11 +5,15 @@ import CreateEvent from '~/sections/rituals/CreateEvent.astro'
 import PastEvents from '~/sections/rituals/PastEvents.astro'
 import RitualCampaign from '~/sections/rituals/RitualCampaign.astro'
 import UpcomingEvents from '~/sections/rituals/UpcomingEvents.astro'
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
 ---
 
 <Layout
-  title=''
-  description=''
+  title={t('rituals.page.index.title')}
+  description={t('rituals.page.index.description')}
 >
   <Hero />
   <main class='pb-32'>

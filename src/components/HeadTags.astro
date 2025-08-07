@@ -4,29 +4,30 @@ import type { Preload } from '~/types/index.d'
 
 interface Props {
   title: string
-  description: string
-  preload?: Array<Preload>
-  canonical?: string
-  image?: string
+  description?: string | undefined
+  preload?: Array<Preload> | undefined
+  canonical?: string | undefined
+  image?: string | undefined
 }
 
-const { title, description, preload, image } = Astro.props
-/*
+const { title, description, preload, image, canonical } = Astro.props
+
 const determineCanonicalURL = () => {
 	if (Astro.url.host.includes('localhost')) {
 		return 'http://localhost:4321'
-	} else if (Astro.url.host.includes('192.168.0.11')) {
-		return 'http://192.168.0.11:4321'
-	} else if (Astro.url.host.includes('172.23.224.1')) {
-		return 'http://172.23.224.1:4321'
+	} else if (Astro.url.host.includes('192.168.100.31')) {
+		return 'http://192.168.100.31:4321'
+	} else if (Astro.url.host.includes('172.31.48.1')) {
+		return 'http://172.31.48.1:4321'
 	}
 	return canonical || Astro.url.pathname
 }
 const canonicalUrl = new URL(determineCanonicalURL(), Astro.site)
-*/
+
 ---
 
 <meta charset='UTF-8' />
+<title>{title}</title>
 <meta
   name='viewport'
   content='width=device-width'
@@ -66,17 +67,16 @@ const canonicalUrl = new URL(determineCanonicalURL(), Astro.site)
   content='browserconfig.xml'
 />
 
-<!--
+
 <link
 	rel='canonical'
 	href={canonicalUrl}
-/> -->
+/>
 <!-- Open Graph Facebook and other pages -->
-<!--
 <meta
 	property='og:url'
 	content={canonicalUrl}
-/> -->
+/>
 <meta
   property='og:type'
   content='website'

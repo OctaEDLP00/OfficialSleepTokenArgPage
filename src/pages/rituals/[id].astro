@@ -1,12 +1,15 @@
 ---
 import Layout from '~/layouts/Layout.astro'
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
 
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
 const { id } = Astro.params
 ---
 
 <Layout
-  title=''
-  description=''
+  title={t('rituals.page.id.title', { id: id ?? '' })}
+  description={t('rituals.page.id.description', { id: id ?? '' })}
 >
   <main>{id}</main>
 </Layout>

@@ -54,11 +54,21 @@
     {
       "url": "/public/schemas/worshippers.schema.json",
       "fileMatch": ["/src/data/worshippers.json"]
+    },
+    {
+      "url": "/public/schemas/rituals.schema.json",
+      "fileMatch": ["/src/data/rituals.json"]
     }
   ],
+  "[plaintext]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "bracketLens.mode": "manual",
+    "files.trimFinalNewlines": false,
+    "prettier.endOfLine": "crlf"
+  },
   "editor.wordWrap": "on",
-  "IDX.aI.enableInlineCompletion": true,
-  "IDX.aI.enableCodebaseIndexing": true,
   "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.expand": true
+  "explorer.fileNesting.expand": true,
+  "chat.todoListTool.enabled": true
 }

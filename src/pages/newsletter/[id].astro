@@ -14,13 +14,17 @@ if (newsletter === undefined) {
 
 if (!newsletter) throw new Error(`Could not find newsletter with id ${id}`)
 const { data } = newsletter
-const { title, description, readingTime } = data
+const { title, readingTime } = data
 const { Content } = await render(newsletter)
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
+const updatedTitle = t(`newsletter.page.id.title`, { title, readTime: readingTime })
 ---
 
 <Layout
-  title={`${title} Nesletter | Read Time ${readingTime}`}
-  description={description}
+  title={updatedTitle}
 >
   <main class='container flex w-full items-center justify-center py-32'>
     <div class='prose'>

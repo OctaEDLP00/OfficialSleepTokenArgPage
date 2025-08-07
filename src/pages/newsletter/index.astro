@@ -4,11 +4,15 @@ import Subscription from '~/sections/newsletter/Subscription.astro'
 import RecentNewslatter from '~/sections/newsletter/RecentNewslatter.astro'
 import NewslatterStats from '~/sections/newsletter/NewslatterStats.astro'
 import Layout from '~/layouts/Layout.astro'
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
 ---
 
 <Layout
-  title=''
-  description=''
+  title={t('newsletter.page.index.title')}
+  description={t('newsletter.page.index.description')}
 >
   <Hero />
   <main class='pb-32'>
