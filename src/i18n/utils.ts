@@ -2,7 +2,7 @@ import { defaultLang, ui } from './ui';
 
 export function getLangFromURL(url: URL) {
   const [, lang] = url.pathname.split('/')
-  if (lang! in ui) return lang as keyof typeof ui
+  if (lang && lang! in ui) return lang as keyof typeof ui
   return defaultLang
 }
 
@@ -18,9 +18,7 @@ export function useTranslation(lang: keyof typeof ui) {
     variables?: Record<string, string | number>,
   ) {
     const text = ui[lang][key] || ui[defaultLang][key]
-    if (variables) {
-      return replaceVariables(text, variables)
-    }
+    if (variables) return replaceVariables(text, variables)
     return text
   }
 }

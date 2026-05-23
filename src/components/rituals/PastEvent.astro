@@ -3,25 +3,39 @@ import Arrow from '~/assets/arrow.svg'
 import type { Image } from '~/types'
 
 interface Props {
-  assistants: number
+  assistants: number | string
   date: string | Date
   description: string
   eventType: string
-  image: Image
+  src: Image['src']
+  alt: Image['alt']
+  width: Image['width']
+  height: Image['height']
   place: string
   title: string
 }
 
-const { assistants, date, description, eventType, image, place, title } = Astro.props
+const {
+  assistants,
+  date,
+  description,
+  eventType,
+  width,
+  place,
+  title,
+  height,
+  src,
+  alt
+} = Astro.props
 ---
 
 <article class='bg-ritual-800 overflow-hidden rounded-lg'>
   <div class='h-48'>
     <img
-      src={image.src}
-      alt={image.alt}
-      width={image.width}
-      height={image.height}
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
       class='h-full w-full object-cover'
     />
   </div>
@@ -35,8 +49,8 @@ const { assistants, date, description, eventType, image, place, title } = Astro.
     </p>
     <div class='flex items-center justify-between'>
       <span class='text-sm text-gray-400'>👥 {assistants} asistentes</span>
-      <button class='text-eia-500 hover:text-eia-300 transition-colors'>
-        Ver fotos <Arrow class='size-2' />
+      <button class='text-eia-500 hover:text-eia-300 transition-colors flex items-center gap-2'>
+        Ver fotos <Arrow class='size-4' />
       </button>
     </div>
   </div>

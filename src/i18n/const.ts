@@ -1,4 +1,4 @@
-const KEY_TRANSLATIONS = {
+export const KEY_TRANSLATIONS = {
   // Main Page
   'main.page.index.title': 'main.page.index.title',
   'main.page.index.description': 'main.page.index.description',
@@ -33,7 +33,7 @@ const KEY_TRANSLATIONS = {
   'discography.page.title': 'discography.page.title',
   'discography.page.description': 'discography.page.description',
   'discography.page.name-album.title': 'discography.page.name-album.title',
-  'discography.page.name-album.description': 'discography.page.name-album.description',
+  'discography.page.na me-album.description': 'discography.page.name-album.description',
   // Offerings
   'offerings.page.index.title': 'offerings.page.index.title',
   'offerings.page.index.description': 'offerings.page.index.description',
@@ -49,8 +49,18 @@ const KEY_TRANSLATIONS = {
   'newsletter.page.index.title': 'newsletter.page.index.title',
   'newsletter.page.index.description': 'newsletter.page.index.description',
   'newsletter.page.id.title': 'newsletter.page.id.title',
-  'newsletter.page.id.description': 'newsletter.page.id.title',
+  'newsletter.page.id.description': 'newsletter.page.id.description',
   // Worshippers
   'worshippers.page.index.title': 'worshippers.page.index.title',
   'worshippers.page.index.description': 'worshippers.page.index.description',
+  // EstimatedCompletation - WorkInProgress component
+  'workinprogress.estimatedCompletion.estimatedDay':
+    'workinprogress.estimatedCompletion.estimatedDay',
+  'workinprogress.estimatedCompletion.actualStatus':
+    'workinprogress.estimatedCompletion.actualStatus',
+  'workinprogress.estimatedCompletion.priority': 'workinprogress.estimatedCompletion.priority',
+  // MainMessage - WorkInProgress component
+  'workinprogress.mainMessage.h1': 'workinprogress.mainMessage.h1',
+  'workinprogress.mainMessage.h2': 'workinprogress.mainMessage.h2',
+  'workinprogress.mainMessage.p': 'workinprogress.mainMessage.p',
 } as const

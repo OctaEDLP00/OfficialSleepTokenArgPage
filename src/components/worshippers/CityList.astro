@@ -1,0 +1,50 @@
+---
+import CityItem from './CityItem.astro'
+import type { Worshippers } from '~/types'
+import { PROVINCES_TEXT } from '~/constants/types' // ajusta la ruta según tu proyecto
+
+const resWorshippers = await fetch(new URL('/api/worshippers', Astro.url))
+const WORSHIPPERS = (await resWorshippers.json()) as Worshippers
+
+// Agrupar por provincia
+const worshippersByProvince: Record<string, number> = {}
+
+for (const w of WORSHIPPERS) {
+  // el JSON trae "Buenos Aires", "Cordoba", etc.
+  // usamos directamente ese texto para agrupar
+  worshippersByProvince[w.province] = (worshippersByProvince[w.province] ?? 0) + 1
+}
+
+const provinces = Object.keys(PROVINCES_TEXT) // ej. ["bsas", "cba", ...]
+---
+
+<div class='max-h-96 space-y-4 overflow-auto pr-3'>
+  {
+    provinces.map(key => {
+      const provinceName = PROVINCES_TEXT[key as string as keyof typeof PROVINCES_TEXT] // "Buenos Aires", etc.
+      const count = worshippersByProvince[provinceName] ?? 0
+
+      return (
+        <CityItem
+          province={provinceName}
+          worshippersCount={count}
+        />
+      )
+    })
+  }
+</div>
+
+<!-- <style>
+  div::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  div::-webkit-scrollbar-track {
+    background: var(--color-ritual-900);
+  }
+  div::-webkit-scrollbar-thumb {
+    background: var(--color-eia-500);
+    border-radius: 9px;
+    border: 1px solid var(--color-eia-500);
+  }
+</style>
+ -->

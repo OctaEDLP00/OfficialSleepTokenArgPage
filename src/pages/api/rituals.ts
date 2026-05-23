@@ -1,16 +1,11 @@
 import type { APIRoute } from 'astro'
-const rituals = (await import('src/data/rituals.json')).default
+const rituals = (await import('~/data/rituals.json')).default
 
-export const GET: APIRoute = async ({ params, props, request }) => {
-  console.log('POST request received for rituals')
-  console.log({ params, props, request })
-  return new Response(JSON.stringify(rituals), {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
+export const GET: APIRoute = async () => {
+  return new Response(JSON.stringify(rituals))
 }
 
+/*
 export const POST: APIRoute = async ({ params, props, request }) => {
   console.log('POST request received for rituals')
   console.log({ params, props, request })
@@ -62,3 +57,4 @@ export const DELETE: APIRoute = async ({ params, props, request }) => {
     }),
   )
 }
+*/

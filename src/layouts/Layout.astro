@@ -16,14 +16,14 @@ const lang = getLangFromURL(Astro.url)
 ---
 
 <!doctype html>
-<html {lang}>
+<html lang={lang} class='antialiased scroll-smooth'>
   <head>
     <HeadTags
       title={title}
       description={description}
     />
   </head>
-  <body class='bg-ritual-900 font-vessel font-light text-gray-200'>
+  <body class='bg-ritual-900 font-vessel font-light text-gray-200 print:bg-white print:text-black'>
     <Navbar />
     <slot />
     <Footer />
@@ -32,26 +32,26 @@ const lang = getLangFromURL(Astro.url)
 </html>
 
 <style is:global>
-  html::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 0.5rem;
   }
-  html::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background: var(--color-ritual-900);
   }
-  html::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background: var(--color-eia-500);
     border-radius: 9px;
     border: 1px solid var(--color-eia-500);
   }
 
-  html::selection {
-    background-color: #6d28d9;
-    color: #0a0a0a;
+  ::selection {
+    background-color: var(--color-selection-background, #6d28d9);
+    color: var(--color-selection-foreground, #fafafa);
   }
 
-  html::-moz-selection {
-    background-color: #6d28d9;
-    color: #0a0a0a;
+  ::-moz-selection {
+    background-color: var(--color-selection-background, #6d28d9);
+    color: var(--color-selection-foreground, #fafafa);
   }
 
   button:focus,
@@ -75,11 +75,6 @@ const lang = getLangFromURL(Astro.url)
     #musicPlayer,
     footer {
       display: none !important;
-    }
-
-    body {
-      background: white !important;
-      color: black !important;
     }
   }
 </style>

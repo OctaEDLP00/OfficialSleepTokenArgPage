@@ -1,3 +1,37 @@
+---
+import PastEvent from '~/components/rituals/PastEvent.astro'
+import type { Image } from '~/types'
+
+interface Event {
+  assistants: number | string
+  date: string | Date
+  description: string
+  eventType: string
+  image: Image
+  place: string
+  title: string
+}
+
+const EVENTS = [
+  {
+    title: 'Take Me Back to Eden',
+    eventType: 'Listening Party',
+    place: 'Buenos Aires',
+    date: 'Diciembre 2024',
+    description:
+      'Una noche mágica donde 80 adoradores se reunieron para celebrar el álbum anterior.',
+    assistants: 80,
+    image: {
+      alt: 'Take Me Back to Eden Listening Party',
+      src: '/images/albums/TMBTE.webp',
+      width: 800,
+      height: 600,
+    },
+  }
+] satisfies Event[]
+
+---
+
 <section
   data-name='PastEvents'
   class='mx-auto mb-12 max-w-6xl px-4'
@@ -5,37 +39,19 @@
   <h2 class='text-eia-500 mb-8 text-2xl font-bold'>Rituales Pasados</h2>
 
   <div class='grid gap-6 md:grid-cols-2'>
-    <!-- PAST EVENT CARD COMPONENT - Reusable -->
-    <article class='bg-ritual-800 overflow-hidden rounded-lg'>
-      <div class='from-eia-500/20 to-ritual-700 h-48 bg-gradient-to-br'></div>
-      <div class='p-6'>
-        <h3 class='text-eia-300 mb-2 text-lg font-semibold'>
-          Take Me Back to Eden - Listening Party
-        </h3>
-        <p class='mb-3 text-sm text-gray-400'>Buenos Aires • Diciembre 2024</p>
-        <p class='mb-4 text-gray-300'>
-          Una noche mágica donde 80 adoradores se reunieron para celebrar el álbum anterior.
-        </p>
-        <div class='flex items-center justify-between'>
-          <span class='text-sm text-gray-400'>👥 80 asistentes</span>
-          <button class='text-eia-500 hover:text-eia-300 transition-colors'>Ver fotos →</button>
-        </div>
-      </div>
-    </article>
-
-    <article class='bg-ritual-800 overflow-hidden rounded-lg'>
-      <div class='from-eia-500/20 to-ritual-700 h-48 bg-gradient-to-br'></div>
-      <div class='p-6'>
-        <h3 class='text-eia-300 mb-2 text-lg font-semibold'>Ritual de Meditación Musical</h3>
-        <p class='mb-3 text-sm text-gray-400'>Rosario • Noviembre 2024</p>
-        <p class='mb-4 text-gray-300'>
-          Experiencia inmersiva combinando la música de Sleep Token con meditación guiada.
-        </p>
-        <div class='flex items-center justify-between'>
-          <span class='text-sm text-gray-400'>👥 35 asistentes</span>
-          <button class='text-eia-500 hover:text-eia-300 transition-colors'>Ver fotos →</button>
-        </div>
-      </div>
-    </article>
+    {EVENTS.map(({ title, place, date, description, assistants, image }) => (
+      <PastEvent
+        title={title}
+        eventType={place}
+        place={place}
+        date={date}
+        description={description}
+        assistants={assistants}
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+      />
+    ))}
   </div>
 </section>

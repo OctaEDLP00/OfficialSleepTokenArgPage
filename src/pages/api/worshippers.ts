@@ -1,6 +1,5 @@
 import type { APIRoute } from 'astro'
-import { require } from '~/lib/index'
-const worshippers = (await import('src/data/worshippers.json')).default
+const worshippers = (await import('~/data/worshippers.json')).default
 import { writeFileSync } from 'node:fs'
 
 export const GET: APIRoute = async ({}) => {
@@ -9,9 +8,9 @@ export const GET: APIRoute = async ({}) => {
 
 export const POST: APIRoute = async ({ request }) => {
   const newWorshipper = await request.json()
-  const data = writeFileSync(
+  writeFileSync(
     'src/data/worshippers.json',
     JSON.stringify([...worshippers, newWorshipper], null, 2),
   )
-  return new Response(JSON.stringify({ newWorshipper }, { status: 201 }))
+  return new Response(JSON.stringify({ newWorshipper }), { status: 201, headers: { 'Content-Type': 'application/json' } })
 }

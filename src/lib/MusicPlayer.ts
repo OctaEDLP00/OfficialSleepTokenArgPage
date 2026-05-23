@@ -1,3 +1,5 @@
+import { $ } from '~/lib/Dom'
+
 /**
  * MUSIC PLAYER CLASS - OOP Implementation for Sleep Token Argentina Fan Page
  *
@@ -55,19 +57,19 @@ class MusicPlayer {
    * Initialize the music player
    */
   init() {
-    this.playerElement = document.getElementById('musicPlayer')
+    this.playerElement = $('#musicPlayer')
     if (!this.playerElement) return
 
     // Get DOM elements
-    this.playPauseBtn = document.getElementById('playPauseBtn')
-    this.prevBtn = document.getElementById('prevBtn')
-    this.nextBtn = document.getElementById('nextBtn')
-    this.progressBar = document.getElementById('progressBar')
-    this.currentTimeElement = document.getElementById('currentTime')
-    this.totalTimeElement = document.getElementById('totalTime')
-    this.currentSongElement = document.getElementById('currentSong')
-    this.currentArtistElement = document.getElementById('currentArtist')
-    this.volumeBtn = document.getElementById('volumeBtn')
+    this.playPauseBtn = $<'button'>('#playPauseBtn')
+    this.prevBtn = $<'button'>('#prevBtn')
+    this.nextBtn = $<'button'>('#nextBtn')
+    this.progressBar = $<'div'>('#progressBar')
+    this.currentTimeElement = $<'span'>('#currentTime')
+    this.totalTimeElement = $<'span'>('#totalTime')
+    this.currentSongElement = $<'div'>('#currentSong')
+    this.currentArtistElement = $<'div'>('#currentArtist')
+    this.volumeBtn = $<'button'>('#volumeBtn')
 
     // Bind event listeners
     this.bindEvents()
@@ -107,44 +109,17 @@ class MusicPlayer {
   /**
    *  Load default Sleep Token playlist
    */
-  loadDefaultPlaylist() {
-    this.playlist = [
-      {
-        title: 'Anima',
-        artist: 'Sleep Token',
-        album: 'Even In Arcadia',
-        duration: 225, // 3:45 in seconds
-      },
-      {
-        title: 'Levitate',
-        artist: 'Sleep Token',
-        album: 'Even In Arcadia',
-        duration: 252, // 4:12 in seconds
-      },
-      {
-        title: 'Distraction',
-        artist: 'Sleep Token',
-        album: 'Even In Arcadia',
-        duration: 208, // 3:28 in seconds
-      },
-      {
-        title: 'Ascensionism',
-        artist: 'Sleep Token',
-        album: 'Even In Arcadia',
-        duration: 301, // 5:01 in seconds
-      },
-      {
-        title: 'Chokehold',
-        artist: 'Sleep Token',
-        album: 'Take Me Back to Eden',
-        duration: 234,
-      },
-      {
-        title: 'The Summoning',
-        artist: 'Sleep Token',
-        album: 'Take Me Back to Eden',
-        duration: 387,
-      },
+  loadDefaultPlaylist(loadPlaylist = []) {
+    this.playlist = loadPlaylist.length > 0 ? loadPlaylist : [
+      { title: 'The Summoning', artist: 'Sleep Token', album: 'Sundowning', duration: 240 },
+      { title: 'Alkaline', artist: 'Sleep Token', album: 'Sundowning', duration: 300, },
+      { title: 'The Night Does Not Belong to God', artist: 'Sleep Token', album: 'Sundowning', duration: 360 },
+      { title: 'Acensionism', artist: 'Sleep Token', album: 'Sundowning', duration: 420 },
+      { title: 'Gods', artist: 'Sleep Token', album: 'Sundowning', duration: 480 },
+      { title: 'Jaws', artist: 'Sleep Token', album: 'Sundowning', duration: 540 },
+      { title: 'Higher', artist: 'Sleep Token', album: 'Sundowning', duration: 600 },
+      { title: 'The Offering', artist: 'Sleep Token', album: 'Sundowning', duration: 660 },
+      { title: 'Acensionism (Reprise)', artist: 'Sleep Token', album: 'Sundowning', duration: 720 },
     ]
   }
 

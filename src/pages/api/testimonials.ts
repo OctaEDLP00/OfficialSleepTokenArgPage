@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro'
-const testimonials = (await import('src/data/testimonials.json')).default
+const testimonials = (await import('~/data/testimonials.json')).default
 
 export const GET: APIRoute = async ({}) => {
   return new Response(JSON.stringify(testimonials))

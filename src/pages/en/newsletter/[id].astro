@@ -1,0 +1,34 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import { getEntry, render } from 'astro:content'
+
+const { id } = Astro.params
+if (id === undefined) {
+  return Astro.redirect('/404')
+}
+
+const newsletter = await getEntry('newsletter', id)
+if (newsletter === undefined) {
+  return Astro.redirect('/404')
+}
+
+if (!newsletter) throw new Error(`Could not find newsletter with id ${id}`)
+const { data } = newsletter
+const { title, readingTime } = data
+const { Content } = await render(newsletter)
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
+const updatedTitle = t(`newsletter.page.id.title`, { title, readTime: readingTime })
+---
+
+<Layout
+  title={updatedTitle}
+>
+  <main class='container flex w-full items-center justify-center py-32'>
+    <div class='prose'>
+      <Content />
+    </div>
+  </main>
+</Layout>

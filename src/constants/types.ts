@@ -53,21 +53,21 @@ export const PROVINCES_ID = {
 } as const
 
 export const MONTH_ID = {
-  Enero: 'enero',
-  Febrero: 'febrero',
-  Marzo: 'marzo',
-  Abril: 'abril',
-  Mayo: 'mayo',
-  Junio: 'junio',
-  Julio: 'julio',
-  Agosto: 'agosto',
-  Septiembre: 'septiembre',
-  Octubre: 'octubre',
-  Noviembre: 'noviembre',
-  Diciembre: 'diciembre',
+  enero: 'enero',
+  febrero: 'febrero',
+  marzo: 'marzo',
+  abril: 'abril',
+  mayo: 'mayo',
+  junio: 'junio',
+  julio: 'julio',
+  agosto: 'agosto',
+  septiembre: 'septiembre',
+  octubre: 'octubre',
+  noviembre: 'noviembre',
+  diciembre: 'diciembre',
 } as const
 
-export const MONTH_TEXT = {
+export const MONTH_TEXT_ES = {
   Enero: 'Enero',
   Febrero: 'Febrero',
   Marzo: 'Marzo',
@@ -80,4 +80,34 @@ export const MONTH_TEXT = {
   Octubre: 'Octubre',
   Noviembre: 'Noviembre',
   Diciembre: 'Diciembre',
+} as const
+
+export const MONTH_TEXT_EN = {
+  Enero: 'January',
+  Febrero: 'February',
+  Marzo: 'March',
+  Abril: 'April',
+  Mayo: 'May',
+  Junio: 'June',
+  Julio: 'July',
+  Agosto: 'August',
+  Septiembre: 'September',
+  Octubre: 'October',
+  Noviembre: 'November',
+  Diciembre: 'December',
+} as const
+
+export const MONTH_TEXT_FR = {
+  Enero: 'Janvier',
+  Febrero: 'Février',
+  Marzo: 'Mars',
+  Abril: 'Avril',
+  Mayo: 'Peut',
+  Junio: 'Juin',
+  Julio: 'Juillet',
+  Agosto: 'Août',
+  Septiembre: 'Septembre',
+  Octubre: 'Octobre',
+  Noviembre: 'Octobre',
+  Diciembre: 'Décembre',
 } as const

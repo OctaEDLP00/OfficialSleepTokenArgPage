@@ -3,15 +3,22 @@ interface Props {
   title: string
   subtitle: string
   description: string
+  link: string
 }
 
-const { title, description, subtitle } = Astro.props
+const { title, description, subtitle, link } = Astro.props
 ---
 
 <div class='flex items-start space-x-4'>
-  <div class='bg-eia-500/20 flex size-17 flex-shrink-0 items-center justify-center rounded-lg'>
-    <slot />
-  </div>
+  <a
+    href={link}
+    target='_blank'
+    rel='noopener noreferrer'
+  >
+    <div class='bg-eia-500/20 flex size-17 shrink-0 items-center justify-center rounded-lg'>
+      <slot />
+    </div>
+  </a>
   <div>
     <h3 class='text-eia-300 mb-1 font-semibold'>{title}</h3>
     <p class='text-gray-300'>{subtitle}</p>

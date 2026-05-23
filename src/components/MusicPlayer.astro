@@ -75,7 +75,22 @@
 
   declare global {
     interface Window {
+      /**
+       * Global instance of the MusicPlayer class.
+       * This instance is created when the DOM is loaded and can be used to control music playback.
+       */
       musicPlayer: MusicPlayer
+      /**
+       * Function to play a song by title and album name.
+       * This function will call the playSong method of the global musicPlayer instance.
+       * @param songTitle The title of the song to play.
+       * @param albumName The name of the album the song belongs to, or null if not applicable.
+       *
+       * @example
+       * ```js
+       * playSong('The Summoning', 'Sundowning'); // This will play the song "The Summoning" from the album "Sundowning".
+       * ```
+       */
       playSong: (songTitle: string, albumName: string | null) => void
     }
   }

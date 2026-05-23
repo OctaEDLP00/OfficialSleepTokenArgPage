@@ -1,0 +1,15 @@
+---
+interface Props {
+  count: number | string
+}
+const { count } = Astro.props
+---
+
+<div class='bg-ritual-900/50 rounded-lg p-4'>
+  <div
+    class='from-eia-500/20 to-vessel-500/20 mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br'
+  >
+    <span class='text-eia-400 text-2xl font-bold'>{count}</span>
+  </div>
+  <p class='text-sm text-gray-400'>Adoradores en Argentina</p>
+</div>

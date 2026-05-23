@@ -1,19 +1,35 @@
+---
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+import type { MonthTextEN, MonthTextES, MonthTextFR } from '~/types'
+
+interface Props {
+  priority: 'high' | 'medium' | 'low'
+  estimatedDate: `${number} ${MonthTextEN | MonthTextES | MonthTextFR}` | `${MonthTextEN | MonthTextES | MonthTextFR} ${number}`
+  actualStatus: 'Active Development' | 'Waiting' | 'Completed'
+}
+
+const { priority, estimatedDate, actualStatus } = Astro.props
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
+---
+
 <div class='mb-12 grid gap-6 md:grid-cols-3'>
   <div class='bg-ritual-800/30 border-eia-500/20 rounded-xl border p-6 backdrop-blur-sm'>
     <div class='mb-3 text-3xl'>📅</div>
-    <h4 class='text-eia-300 mb-2 font-semibold'>Fecha Estimada</h4>
-    <p class='text-gray-300'>Febrero 2025</p>
+    <h4 class='text-eia-300 mb-2 font-semibold'>{t('workinprogress.estimatedCompletion.estimatedDay')}</h4>
+    <p class='text-gray-300'>{estimatedDate}</p>
   </div>
 
   <div class='bg-ritual-800/30 border-vessel-500/20 rounded-xl border p-6 backdrop-blur-sm'>
     <div class='mb-3 text-3xl'>⚡</div>
-    <h4 class='text-vessel-300 mb-2 font-semibold'>Estado Actual</h4>
-    <p class='text-gray-300'>Desarrollo Activo</p>
+    <h4 class='text-vessel-300 mb-2 font-semibold'>{t('workinprogress.estimatedCompletion.actualStatus')}</h4>
+    <p class='text-gray-300'>{actualStatus}</p>
   </div>
 
   <div class='bg-ritual-800/30 border-tmbte-500/20 rounded-xl border p-6 backdrop-blur-sm'>
     <div class='mb-3 text-3xl'>🎯</div>
-    <h4 class='text-tmbte-300 mb-2 font-semibold'>Prioridad</h4>
-    <p class='text-gray-300'>Alta</p>
+    <h4 class='text-tmbte-300 mb-2 font-semibold'>{t('workinprogress.estimatedCompletion.priority')}</h4>
+    <p class='text-gray-300'>{priority}</p>
   </div>
 </div>

@@ -1,12 +1,12 @@
 ---
-import type { ProvinceText, Month } from '~/types'
+import type { ProvinceText, MonthTextEN, MonthTextES, MonthTextFR } from '~/types/index'
 
 interface Props {
   assistants: number
   day: string
   description: string
   eventType: string
-  month: Month
+  month: MonthTextEN | MonthTextES | MonthTextFR
   place: string
   province: ProvinceText
   time: string

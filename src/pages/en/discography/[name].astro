@@ -1,0 +1,23 @@
+---
+import Layout from '~/layouts/Layout.astro'
+import { getLangFromURL, useTranslation } from '~/i18n/utils'
+import WorkInProgress from '~/components/ui/WorkInProgress.astro'
+
+const lang = getLangFromURL(Astro.url)
+const t = useTranslation(lang)
+const { name } = Astro.params
+const nameWithoutHyphens = name?.replaceAll('-', ' ')
+const capitalizedName = nameWithoutHyphens
+  ?.split(' ')
+  .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+  .join(' ')
+---
+
+<Layout
+  title={t('discography.page.name-album.title', { name: capitalizedName ?? '' })}
+  description={t('discography.page.name-album.description', { name: capitalizedName ?? '' })}
+>
+  <main class='min-h-screen flex items-center justify-center relative overflow-hidden pt-20 pb-20'>
+    <WorkInProgress />
+  </main>
+</Layout>

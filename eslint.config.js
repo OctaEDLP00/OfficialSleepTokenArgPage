@@ -5,7 +5,21 @@ import globals from 'globals'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { ignores: ['dist/*'] },
+  {
+    ignores: [
+      'dist/*',
+      'dist',
+      'pnpm-lock.yaml',
+      'yarn.lock',
+      'bun.lock',
+      'package-lock.json',
+      '.astro',
+      'node_modules',
+      '.trash',
+      '_trash',
+      'template-tweet-firmas.txt',
+    ],
+  },
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   configPrettier,
   ...pluginAstro.configs['flat/recommended'],
@@ -16,21 +30,21 @@ export default [
     ...configLove,
     rules: {
       '@typescript-eslint/triple-slash-reference': 'off',
-    }
+    },
   },
   {
     files: ['*.astro'],
     parser: 'astro-eslint-parser',
     parserOptions: {
-      parser: '@typescript-eslint/parser'
+      parser: '@typescript-eslint/parser',
     },
     rules: {
-      semi: ['warn', 'single']
-    }
+      semi: ['warn', 'single'],
+    },
   },
   {
     rules: {
-      semi: ['warn', 'single']
-    }
-  }
+      semi: ['warn', 'single'],
+    },
+  },
 ]

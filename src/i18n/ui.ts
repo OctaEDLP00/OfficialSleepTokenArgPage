@@ -52,8 +52,8 @@ export const ui = {
     'footer.social': 'Siguenos',
     'footer.copyright': 'Sleep Token Argentina. Todos los derechos reservados.',
     // Discography Page
-    'discography.page.index.title': 'Discografia de Sleep Token | Comunidad de Adoradores',
-    'discography.page.index.description':
+    'discography.page.title': 'Discografia de Sleep Token | Comunidad de Adoradores',
+    'discography.page.description':
       'Aqui encontraras toda la discografia de Sleep Token, como tambien podras escucharla miebtras navegas por la pagina.',
     'discography.page.name-album.title': 'Album %name% | Fan Page Sleep Token Argentina',
     'discography.page.name-album.description':
@@ -77,7 +77,15 @@ export const ui = {
     // Worshippers
     'worshippers.page.index.title': '',
     'worshippers.page.index.description': '',
-    //
+    // WorkInProgress - EstimatedCompletation component
+    'workinprogress.estimatedCompletion.estimatedDay': 'Fecha Estimada',
+    'workinprogress.estimatedCompletion.actualStatus': 'Estado Actual',
+    'workinprogress.estimatedCompletion.priority': 'Prioridad',
+    // MainMessage - WorkInProgress component
+    'workinprogress.mainMessage.h1': 'En Construcción',
+    'workinprogress.mainMessage.h2': 'Esta sección está siendo creada con devoción',
+    'workinprogress.mainMessage.p':
+      'Nuestros adoradores están trabajando para traerte una experiencia única. Esta página estará lista pronto para continuar nuestro ritual digital.',
   },
   en: {
     // Index Page
@@ -112,8 +120,8 @@ export const ui = {
     'footer.social': 'Follow us',
     'footer.copyright': 'Sleep Token Argentina. All Right reserved.',
     // Discography Page
-    'discography.page.index.title': 'Sleep Token Discography | Argentina Community',
-    'discography.page.index.description': '',
+    'discography.page.title': 'Sleep Token Discography | Argentina Community',
+    'discography.page.description': '',
     'discography.page.name-album.title': 'Album %name% | Fan Page Sleep Token Argentina',
     'discography.page.name-album.description': '',
     // Offerings
@@ -135,6 +143,15 @@ export const ui = {
     // Worshippers
     'worshippers.page.index.title': '',
     'worshippers.page.index.description': '',
+    // workInProgress - EstimatedCompletation component
+    'workinprogress.estimatedCompletion.estimatedDay': 'Estimated Day',
+    'workinprogress.estimatedCompletion.actualStatus': 'Actual Status',
+    'workinprogress.estimatedCompletion.priority': 'Priority',
+    // MainMessage - WorkInProgress component
+    'workinprogress.mainMessage.h1': 'Under Construction',
+    'workinprogress.mainMessage.h2': 'This section is being created with devotion',
+    'workinprogress.mainMessage.p':
+      'Our worshippers are working to bring you a unique experience. This page will be ready soon to continue our digital ritual.',
   },
   fr: {
     // Main Page
@@ -169,8 +186,8 @@ export const ui = {
     'footer.social': 'Suivez-nous',
     'footer.copyright': 'Sleep Token Argentine. Tous droits réservés.',
     // Discography Page
-    'discography.page.index.title': 'Discographie Sleep Token | Communauté Argentinian',
-    'discography.page.index.description': '',
+    'discography.page.title': 'Discographie Sleep Token | Communauté Argentinian',
+    'discography.page.description': '',
     'discography.page.name-album.title': 'Album %name% | Page fan jeton sommeil Argentine',
     'discography.page.name-album.description': '',
     // Offerings
@@ -192,5 +209,14 @@ export const ui = {
     // Worshippers
     'worshippers.page.index.title': '',
     'worshippers.page.index.description': '',
+    // WorkInProgress - EstimatedCompletation component
+    'workinprogress.estimatedCompletion.estimatedDay': 'Jour Estimé',
+    'workinprogress.estimatedCompletion.actualStatus': 'Statut Actuel',
+    'workinprogress.estimatedCompletion.priority': 'Priorité',
+    // MainMessage - WorkInProgress component
+    'workinprogress.mainMessage.h1': 'En cours de construction',
+    'workinprogress.mainMessage.h2': 'Cette section est en cours de création avec dévotion',
+    'workinprogress.mainMessage.p':
+      'Nos adorateurs travaillent pour vous offrir une expérience unique. Cette page sera bientôt prête à poursuivre notre rituel numérique.',
   },
 } satisfies UI<KeyLang, KeyTranslation>
